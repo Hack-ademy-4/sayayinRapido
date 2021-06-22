@@ -1,5 +1,4 @@
-@extends('app')
-@section('title', 'Contact us')
+@extends('layout.app')
 @section('content')
 <div class="login_form_wrapper formulario">
     <form class="container-fluid text-center" method="POST" action='{{route("contact_new")}}'>
