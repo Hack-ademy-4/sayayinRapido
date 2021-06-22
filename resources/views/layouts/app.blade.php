@@ -14,12 +14,17 @@
 </head>
 
 <body>
-    @include("_navbar")
-    @include("_footer")
+    @include("layouts._navbar")
+    @yield('content')
+    @include("layouts._footer")
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+    <script>
         //script boton de logout
         const logout = document.getElementById('logoutBtn');
         if (logout) {
@@ -28,9 +33,6 @@
                 const form = document.getElementById('logoutForm').submit();
             });
         }
-        //mdbtype="text/javascript"
-        type = "text/javascript"
-        src = "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js" >
     </script>
 </body>
 

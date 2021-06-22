@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AnnounceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,19 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-
-Route::get('/',[HomeController::class,'index'])->name('home');
+//Ruta home
+Route::get('/',[HomeController::class,"index"])->name('home');
 
 //Anuncios
 
-//Crear Anuncio
-Route::get('/announcement/new',[HomeController::class,'newAnnouncement'])->name('announcement.new');
+//Crear Anuncios
+Route::get('new/announcements',[AnnounceController::class,"create"])->name('announcements.create');
+Route::post('new/announcements',[AnnounceController::class,"store"]);
+//Leer Anuncios
+Route::get('/announcements', [AnnounceController::class,"index"])->name("announcements.index");
+Route::get('/announcements/{announcement}', [AnnounceController::class,"show"])->name("announcements.show");
+//Editar Anuncios
+Route::get('/announcements/{announcement}/edit', [AnnounceController::class, "edit"])->name("announcements.edit");
+Route::post('/announcements/{announcement}/edit', [AnnounceController::class, "update"]);
+//Eliminar Anuncios
+Route::delete('/announcements/{announcement}', [AnnounceController::class, "destroy"])->name("announcements.destroy")->middleware("auth");

@@ -27,7 +27,7 @@
                 @if (Route::has('login'))
                 <li class="nav-item mx-0 mx-lg-1 ">
                     <a class="borderMarcador nav-link text-lowercase py-3 px-0 px-lg-3 rounded js-scroll-trigger text-decoration-none text-reset"
-                        href="#"><span>Login</span></a>
+                        href="{{route('login')}}"><span>Login</span></a>
                 </li>
                 @endif
                 @if (Route::has('register'))

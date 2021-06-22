@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Http\FormRequest;
+
+class AnnouncementRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return (boolean)Auth::user();
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            "title" => "required|max:100",
+            "body" => "required|max:355"
+        ];
+    }
+
+    public function messages(){
+        
+        return [
+            'title.required' => 'El anuncio debe de tener un título',
+            'body.required' => 'El cuerpo del anuncio no puede estar vacío'
+        ];
+    }
+}
