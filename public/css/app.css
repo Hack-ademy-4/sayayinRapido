@@ -20,8 +20,17 @@ body{
 
 .formulario{
 	background-color:#f6f5f5;
+}
 
+.cartas{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background-color:#f6f5f5;
+}
 
+.titulo2{
+	color:#713c98;
 }
 @charset "UTF-8";
 /*!
