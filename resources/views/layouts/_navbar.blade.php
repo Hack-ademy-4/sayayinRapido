@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg text-uppercase py-0 border-bottom" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger text-decoration-none text-reset Rapidologo"
-            href="#">Rapido.es</a>
+            href="{{route('home')}}">Rapido.es</a>
         <button
             class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
             type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -22,6 +22,10 @@
                         <a class="dropdown-item text-decoration-none text-reset" href="#">
                         </a>
                     </div>
+                </li>
+
+                <li class="nav-item py-2">
+                    <a class="nav-link text-lowercase text-decoration-none text-reset" href="{{ route('announcements.create') }}">Nuevo Anuncio</a>
                 </li>
                 @guest
                 @if (Route::has('login'))

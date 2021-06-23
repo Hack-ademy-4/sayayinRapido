@@ -32,9 +32,9 @@ class AnnounceController extends Controller
     }
 
     public function store(AnnouncementRequest $request){
-        dd($request);
-        //$data = $request->validated();
-        //$announce = Auth::user()->announcement()->create($data);
+    
+        $data = $request->validated();
+        $announce = Auth::user()->announcement()->create($data);
 
         return redirect()->route("home")->with("msg", "Anuncio subido con éxito a la web");
     }
