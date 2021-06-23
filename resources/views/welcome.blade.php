@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
+@if(session('announcement.create.success'))
+    <div class="alert alert-success">{{session('announcement.create.success')}}</div>
+@endif
 <h1>holaa</h1>
 <div class="card">
   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
