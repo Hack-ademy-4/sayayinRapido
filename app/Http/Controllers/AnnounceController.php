@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AnnouncementRequest;
+use Illuminate\Support\Facades\View;
 
 class AnnounceController extends Controller
 {
+    public function __construct() {
+        
+        View::share("categories", Category::all());
+    }
     public function index(){
 
         $announce = Announcement::all();
@@ -26,11 +32,11 @@ class AnnounceController extends Controller
     }
 
     public function store(AnnouncementRequest $request){
-        $data = $request->validated();
+        dd($request);
+        //$data = $request->validated();
+        //$announce = Auth::user()->announcement()->create($data);
 
-        $announce = Auth::user()->announcement()->create($data);
-
-        return redirect()->route("announcements.index")->with("msg", "Anuncio subido con éxito a la web");
+        return redirect()->route("home")->with("msg", "Anuncio subido con éxito a la web");
     }
 
     public function edit(Announcement $announce){

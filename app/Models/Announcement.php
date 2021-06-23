@@ -18,6 +18,6 @@ class Announcement extends Model
     }
 
     public function categories(){
-        return $this->belongsToMany(Category::class)->withTimestamps();
+        return $this->belongsToMany(Category::class)->withTimestamps(); // No se si esto esta bien. Creo que 1-n
     }
 }
