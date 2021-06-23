@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <div class="container my-5">
-    <section class="row">
-        <div class="col-12 col-md-6 offset-md-3 formulario">
-            <h2 class="text-center cabeza">Login</h2>
+    <section class="row formulario">
+        <div class="col-12 col-md-6 offset-md-3">
+            <h2 class="text-center cabeza my-5">Login</h2>
             <form action="/login" method="POST" class="php-email-form">
                 @csrf
-                <div class="mb-3 my-5">
+                <div class="mb-3 my-3">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
                     @error("email")

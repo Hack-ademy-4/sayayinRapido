@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <div class="container my-5">
-    <section class="row">
-        <div class="col-12 col-md-6 offset-md-3">
+    <section class="row formulario">
+        <div class="col-12 col-md-6 offset-md-3 my-5">
             <h2 class="text-center cabeza">Register</h2>
             <form action="/register" method="POST" class="php-email-form">
                 @csrf
-                <div class="mb-3">
+                <div class="mb-3 my-3">
                     <label for="name" class="form-label">Nombre completo</label>
                     <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name"
                         value="{{old('name')}}">

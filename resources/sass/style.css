@@ -1,4 +1,6 @@
 body{
+	margin:0px;
+	padding:0px;
 	font-family:'Source Sans Pro', sans-serif; 
 }
 
@@ -14,4 +16,10 @@ body{
 
 .cabeza{
 	color:#713c98;
+}
+
+.formulario{
+	background-color:#f6f5f5;
+
+
 }
