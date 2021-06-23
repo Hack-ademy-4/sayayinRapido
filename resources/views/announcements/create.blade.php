@@ -9,14 +9,14 @@
 					<input type="text" class="form-control" id="create-title" placeholder="Titulo del articulo" name="title" value="{{old('title')}}" required>
 					<label for="create-title">Titulo</label>
 					<div class="invalid-feedback">
-						Por favor, pon un titulo.
+						{{$errors->first('title')}}
 					</div>
 				</div>
 				<div class="form-floating mb-4">
 					<textarea class="form-control" placeholder="Describe aqui el articulo" id="create-desc" style="height: 100px" name="body" required>{{@old('body')}}</textarea>
 					<label for="create-desc">Descripcion</label>
 					<div class="invalid-feedback">
-						Describe tu articulo para atraer mas ventas.
+						{{$errors->first('body')}}
 					</div>
 				</div>
 				<div class="form-floating mb-4">
@@ -27,6 +27,9 @@
 						@endforeach
 					</select>
 					<label for="create-categories">Selecciona una categoria</label>
+					<div class="invalid-feedback">
+						{{$errors->first('category_id')}}
+					</div>
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary">Sign in</button>
