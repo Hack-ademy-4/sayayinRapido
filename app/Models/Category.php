@@ -11,6 +11,6 @@ class Category extends Model
     use HasFactory;
 
     public function announcements(){
-        return $this->belongsToMany(Announcement::class)->withTimestamps();
+        return $this->hasMany(Announcement::class);
     }
 }
