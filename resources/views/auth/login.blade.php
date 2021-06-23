@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container my-5">
-    <section class="row formulario">
+    <section class="row formulario my-5">
         <div class="col-12 col-md-6 offset-md-3">
             <h2 class="text-center cabeza my-5">Login</h2>
             <form action="/login" method="POST" class="php-email-form">

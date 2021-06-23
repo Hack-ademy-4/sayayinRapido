@@ -1,15 +1,6 @@
 <footer class="text-center text-lg-start bg-light text-muted my-5 ">
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div class="me-5 d-none d-lg-block">
-            <span>Conéctate con nosotros en las redes sociales:</span>
-        </div>
-        <div>
-            <a href="" class="me-4 text-reset"><i class="fab fa-facebook-f"></i></a>
-            <a href="" class="me-4 text-reset"><i class="fab fa-twitter"></i></a>
-            <a href="" class="me-4 text-reset"><i class="fab fa-google"></i></a>
-            <a href="" class="me-4 text-reset"><i class="fab fa-instagram"></i></a>
-            <a href="" class="me-4 text-reset"><i class="fab fa-linkedin"></i></a>
-            <a href="" class="me-4 text-reset"><i class="fab fa-github"></i></a>
+        <div class="me-5 d-none d-lg-block">       
         </div>
     </section>
     <section class="">
@@ -19,7 +10,8 @@
                     <h6 class="text-uppercase cabeza fw-bold mb-4">
                         <i class="fas fa-gem me-3"></i>Sayayin Rapido
                     </h6>
-                    <p class="cabeza">Sayayin Rapido es un equipo de personas que aspiran a hacer un mundo colaborativo y más
+                    <p class="cabeza">Sayayin Rapido es un equipo de personas que aspiran a hacer un mundo colaborativo
+                        y más
                         sostenible. Fomentando la reutilización de los
                         objetos para un mundo mejor.</p>
                 </div>
@@ -39,10 +31,10 @@
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                     <h6 class="text-uppercase cabeza fw-bold mb-4">Contacto</h6>
-                    <p><i class="fas fa-home me-3 cabeza"></i> Sevilla, Avenida Don Juan, España</p>
-                    <p><i class="fas fa-envelope me-3 cabeza"></i> sayayin@rapido.com</p>
-                    <p><i class="fas fa-phone me-3 cabeza"></i> + 34 634 567 88</p>
-                    <p><i class="fas fa-print me-3 cabeza"></i> + 34 634 567 89</p>
+                    <p class="cabeza"><i class="fas fa-home me-3 cabeza"></i> Sevilla, Avenida Don Juan, España</p>
+                    <p class="cabeza"><i class="fas fa-envelope me-3 cabeza"></i> sayayin@rapido.com</p>
+                    <p class="cabeza"><i class="fas fa-phone me-3 cabeza"></i> + 34 634 567 88</p>
+                    <p class="cabeza"><i class="fas fa-print me-3 cabeza"></i> + 34 634 567 89</p>
                 </div>
             </div>
         </div>
