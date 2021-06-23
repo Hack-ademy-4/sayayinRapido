@@ -1,12 +1,17 @@
+body{
+	font-family:'Source Sans Pro', sans-serif; 
+}
+
 .navegacion{
-	background: rgb(140,84,180);
+	background: rgb(140, 84, 180);
 	background: linear-gradient(228deg, rgba(140,84,180,1) 38%, rgba(111,152,212,1) 100%); 
 	height: 10vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: aliceblue;
 }
 
-h1{
-	background-color: red;
+.cabeza{
+	color:#713c98;
 }
