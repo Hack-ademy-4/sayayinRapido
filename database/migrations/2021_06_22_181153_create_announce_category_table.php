@@ -13,7 +13,7 @@ class CreateAnnounceCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('announce_category', function (Blueprint $table) {
+        /*Schema::create('announce_category', function (Blueprint $table) {
             $table->id();
             //id de anuncio
             $table->unsignedBigInteger('announce_id');
@@ -23,7 +23,7 @@ class CreateAnnounceCategoryTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
