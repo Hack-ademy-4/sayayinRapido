@@ -12,10 +12,7 @@ use Illuminate\Support\Facades\View;
 
 class AnnounceController extends Controller
 {
-    public function __construct() {
-        
-        View::share("categories", Category::all());
-    }
+    
     public function index(){
 
         $announce = Announcement::all();
@@ -34,7 +31,9 @@ class AnnounceController extends Controller
     public function store(AnnouncementRequest $request){
     
         $data = $request->validated();
+        //dd($data);
         $announce = Auth::user()->announcement()->create($data);
+        
 
         return redirect()->route("home")->with("msg", "Anuncio subido con éxito a la web");
     }
