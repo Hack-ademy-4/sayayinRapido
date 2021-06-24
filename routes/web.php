@@ -17,21 +17,19 @@ use App\Http\Controllers\AnnounceController;
 
 //Ruta home
 Route::get('/',[PublicController::class,"index"])->name('home');
-
-//Anuncios
-
-//Crear Anuncios
-Route::get('/new/announcements', [AnnounceController::class, "create"])->name('announcements.create')->middleware("auth");
-Route::post('/new/announcements', [AnnounceController::class, "store"])->middleware("auth");
-
 //Anuncios relacionados con categorias
 Route::get('/category/{id}/announcements', [PublicController::class, "AnnouncementsByCategory"])->name('category.announcements');
 
-//Leer Anuncios
+
+// -- Anuncios Por usuario --
+//Crear Anuncios
+Route::get('/new/announcements', [AnnounceController::class, "create"])->name('announcements.create')->middleware("auth");
+Route::post('/new/announcements', [AnnounceController::class, "store"])->middleware("auth");
+//Leer Anuncios (El usuario lee los suyos)
 Route::get('/announcements', [AnnounceController::class,"index"])->name("announcements.index");
 Route::get('/announcements/{announcement}', [AnnounceController::class,"show"])->name("announcements.show");
 //Editar Anuncios
-Route::get('/announcements/{announcement}/edit', [AnnounceController::class, "edit"])->name("announcements.edit");
-Route::post('/announcements/{announcement}/edit', [AnnounceController::class, "update"]);
+Route::get('/announcements/{announcement}/edit', [AnnounceController::class, "edit"])->name("announcements.edit")->middleware("auth");
+Route::post('/announcements/{announcement}/edit', [AnnounceController::class, "update"])->middleware("auth");
 //Eliminar Anuncios
 Route::delete('/announcements/{announcement}', [AnnounceController::class, "destroy"])->name("announcements.destroy")->middleware("auth");

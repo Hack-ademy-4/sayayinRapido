@@ -4,7 +4,7 @@
 @if(session('announcement.create.success'))
 <div class="alert alert-success">{{session('announcement.create.success')}}</div>
 @endif
-<h1>Anuncios por categoria: {{$category->name}}</h1>
+<!--h1>Anuncios por categoria: {{--$category->name--}}</h1-->
 
 @foreach($announcements as $announcement)
 <div class="row my-3">
@@ -17,7 +17,7 @@
                 {{$announcement->price}}
             </p>
             <!-- <div class="mb-5">
-                <a href="{{route('announcement.details', ['id'=>$announcement->id])}}">Leer más</a>
+                <a href="{{route('announcements.show', $announcement)}}">Leer más</a>
             </div> -->
             <div class="car-body d-flex">
                 <img src="https://picsum.photos/200/300" alt="">

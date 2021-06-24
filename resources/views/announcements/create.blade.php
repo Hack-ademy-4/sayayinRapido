@@ -2,6 +2,9 @@
 @section('content')
 <section class="row">
 	<div class="col-12 col-md-6 offset-md-3">
+		@if(Session::has("edit"))
+		<form action="{{route('announcements.edit', Session::get('edit'))}}" method="POST" class="@if($errors->any()) was-validated @endif" novalidate>
+		@endif
 		<form action="{{route('announcements.create')}}" method="POST" class="@if($errors->any()) was-validated @endif" novalidate>
 			@csrf
 			<div class="mb-4">

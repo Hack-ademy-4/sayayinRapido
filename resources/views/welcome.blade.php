@@ -12,7 +12,7 @@
         <div class="card">
           <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
             <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
-            <a href="#!">
+            <a href="{{route('announcements.show', $announcement)}}">
               <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
             </a>
           </div>
@@ -25,6 +25,9 @@
             <div class="card-footer d-flex justify-content-between mb-3">
               <a href="{{route('category.announcements', $announcement->category->id)}}">#{{$announcement->category->name}}</a>
               <i>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement->user->name}}</i>
+              @if($announcement->user->id == Auth::id())
+              <a href="{{route('announcements.edit', $announcement)}}"><i class="fas fa-solid fa-pen"></i></a>
+              @endif
             </div>
           </div>
         </div>

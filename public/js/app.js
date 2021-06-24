@@ -4942,9 +4942,46 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "$": () => (/* binding */ $),
+/* harmony export */   "$$": () => (/* binding */ $$),
+/* harmony export */   "$on": () => (/* binding */ $on)
+/* harmony export */ });
+var $ = function $(el) {
+  return document.querySelector(el);
+};
+var $$ = function $$(el) {
+  return document.querySelectorAll(el);
+};
+var $on = function $on(ev, el, callback) {
+  var all = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  var selectEl = $(el);
+
+  if (selectEl) {
+    if (all) {
+      $$(el).forEach(function (e) {
+        return e.addEventListener(ev, callback);
+      });
+    } else {
+      selectEl.addEventListener(ev, callback);
+    }
+  }
+};
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Ocultar la notificacion tras 5 segundos
+
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    $$(".alert").forEach(function (el) {
+      el.style.display = "none";
+    });
+  }, 5000);
+});
 
 /***/ }),
 

@@ -9,19 +9,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AnnouncementRequest;
 use Illuminate\Support\Facades\View;
+use Session;
 
 class AnnounceController extends Controller
 {
     
     public function index(){
 
-        $announce = Announcement::all();
+        $announcements = Auth::user()->Announcements()->paginate(10);
 
-        return view("announcements.index",compact('announce'));
+        return view("announcements.index",compact('announcements'));
     }
 
-    public function show(Announcement $announce){
-        return view("announcements.show", compact($announce));
+    public function show(Announcement $announcement){
+        return view("announcements.details", compact("announcement"));
     }
 
     public function create(){
@@ -36,19 +37,20 @@ class AnnounceController extends Controller
         return redirect()->route("home")->with("msg", "Anuncio subido con éxito a la web");
     }
 
-    public function edit(Announcement $announce){
+    public function edit(Announcement $announcement){
+        Session::now('edit',$announcement);
+        Session::now('_old_input.title', session('_old_input.title', $announcement->title));
+        Session::now('_old_input.body', session('_old_input.body', $announcement->body));
+        Session::now('_old_input.price', session('_old_input.price', $announcement->price));
+        Session::now('_old_input.category_id', session('_old_input.category_id', $announcement->category_id));
 
-        Session::now('edit',$announce);
-        Session::now('_old_input.title', session('_old_input.title', $announce->title));
-        Session::now('_old_input.body', session('_old_input.body', $announce->body));
-
-        return view("articles.create");
+        return view("announcements.create");
 
     }
 
-    public function update(Announcement $announce, AnnouncementRequest $request){
+    public function update($id, AnnouncementRequest $request){
 
-        $announce = Auth::user()->announcement()->findOrFail($announce->id);
+        $announce = Auth::user()->announcements()->findOrFail($id);
 
         return redirect()->route("announcements.index")->with("msg","Anuncio actualizado con éxito en la web");
         
