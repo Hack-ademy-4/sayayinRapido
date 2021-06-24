@@ -20,7 +20,14 @@
 					</div>
 				</div>
 				<div class="form-floating mb-4">
-					<select class="form-select" id="create-categories" aria-label="Floating label select example" name="category_id" required>
+					<label for="create-price">Precio</label>
+					<input type="number" step="0.01" class="form-control" id="create-price" aria-describedby="priceHelp" name="price" value="{{old("price")}}">
+					<div class="invalid-feedback">
+						{{$errors->first('price')}}
+					</div>
+				</div>
+				<div class="form-floating mb-4">
+					<select class="form-select" id="create-categories" aria-label="Floating label select example" name="category" required>
 						<option @if (!old('category_id')) selected @endif value="">Selecciona una categoria</option>
 						@foreach($categories as $category)
 						<option value="{{$category->id}}" @if (old('category_id') == $category->id) selected @endif>{{$category->name}}

@@ -28,6 +28,7 @@ class AnnouncementRequest extends FormRequest
             "title" => "required|max:100",
             "body" => "required|max:355",
             "category_id" => "required|exists:categories,id"
+            "price" => 'required|numeric|max:9999999999999.99'
         ];
     }
 
@@ -38,6 +39,7 @@ class AnnouncementRequest extends FormRequest
             'body.required' => 'El cuerpo del anuncio no puede estar vacío',
             'category_id.required' => 'Selecciona una categoria',
             'exists:categories,id' => 'La categoria no existe',
+            'price.required' => 'El precio no puede estar vacío, ponga un precio al artículo.'
         ];
     }
 }

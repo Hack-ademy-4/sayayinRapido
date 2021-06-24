@@ -24,6 +24,9 @@ Route::get('/',[HomeController::class,"index"])->name('home');
 Route::get('/new/announcements', [AnnounceController::class, "create"])->name('announcements.create')->middleware("auth");
 Route::post('/new/announcements', [AnnounceController::class, "store"])->middleware("auth");
 
+//Anuncios relacionados con categorias
+Route::get('/category/{name}/{id}/announcements', [HomeController::class, "AnnouncementsByCategory"])->name('category.announcements');
+
 //Leer Anuncios
 Route::get('/announcements', [AnnounceController::class,"index"])->name("announcements.index");
 Route::get('/announcements/{announcement}', [AnnounceController::class,"show"])->name("announcements.show");

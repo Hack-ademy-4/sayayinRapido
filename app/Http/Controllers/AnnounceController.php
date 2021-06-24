@@ -12,10 +12,7 @@ use Illuminate\Support\Facades\View;
 
 class AnnounceController extends Controller
 {
-    public function __construct() {
-        
-        View::share("categories", Category::all());
-    }
+    
     public function index(){
 
         $announce = Announcement::all();
