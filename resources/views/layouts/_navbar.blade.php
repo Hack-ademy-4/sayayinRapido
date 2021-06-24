@@ -59,11 +59,6 @@
                 </li>
                 @endif
                 @endguest
-                <div class="d-flex">
-                    @include('layouts._locale',["lang"=>'es','nation'=>'es'])
-                    @include('layouts._locale',["lang"=>'en','nation'=>'gb'])
-                    @include('layouts._locale',["lang"=>'it','nation'=>'it'])
-                </div>
             </ul>
         </div>
     </div>
