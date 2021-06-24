@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
+  @if(session('access.denied.revisor.only'))
+      <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+  @endif
+
   @if(session('msg'))
   <div class="alert alert-success">{{session('msg')}}</div>
   @endif
