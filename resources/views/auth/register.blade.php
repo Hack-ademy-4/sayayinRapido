@@ -3,7 +3,7 @@
 <div class="container my-5">
     <section class="row formulario">
         <div class="col-12 col-md-6 offset-md-3 my-5">
-            <h2 class="text-center cabeza">Register</h2>
+            <h2 class="text-center title_under_navBar">Register</h2>
             <form action="/register" method="POST" class="php-email-form">
                 @csrf
                 <div class="mb-3 my-3">

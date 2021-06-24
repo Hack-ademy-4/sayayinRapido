@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
-<h2 class="text-center cabeza my-5">Detalle del anuncio {{$announcement->name}}</h2>
+<h2 class="text-center title_under_navBar my-5">Detalle del anuncio {{$announcement->name}}</h2>
 <div class="container my-5">
     <div class="row my-3">
-        <div class="col-12 col-md-8 offset-md-2">
+        <div class="col-6 col-md-8 offset-md-2">
             <div class="card card border-0 shadow" style="width: 30rem;">
                 <div class="card-header">
                     {{$announcement->title}}

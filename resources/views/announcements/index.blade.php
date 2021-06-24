@@ -26,8 +26,8 @@
                 </p>
             </div>
             <div class="card-footer d-flex justify-content-between">
-                <strong>Categoria: <a href="#">{{$announcement->category->name}}</a></strong>
-                <i>{{$announcement->created_at->format('d/m/Y')}}-{{$announcement->user->name}}</i>
+                <strong>Categoria <a href="#">{{$announcement->category->name}}</a></strong>
+                <i>{{$announcement->created_at-> format('d/m/Y')}}-{{$announcement->user->name}}</i>
             </div>
         </div>
     </div>

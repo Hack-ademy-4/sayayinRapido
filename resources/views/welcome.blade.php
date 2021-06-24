@@ -4,14 +4,14 @@
   @if(session('msg'))
   <div class="alert alert-success">{{session('msg')}}</div>
   @endif
-  <h2 class="my-5 text-center cabeza">¿Qué estás buscando hoy?</h2>
+  <h2 class="my-5 text-center title_under_navBar">¿Qué estás buscando hoy?</h2>
   <div class="container-fluid">
     <div class="row">
     @foreach($announcements as $announcement)
-      <div class="col-12 col-md-3">
+      <div class="col-md-6 col-lg-4 col-xl-3 my-5">
         <div class="card">
-          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="img-fluid" />
+          <div class="bg-image hover-overlay ripple " data-mdb-ripple-color="light">
+            <img src="https://images.unsplash.com/photo-1590615370581-265ae19a053b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bG9hZGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="img-fluid" />
             <a href="{{route('announcements.show', $announcement)}}">
               <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
             </a>
@@ -23,20 +23,20 @@
             </p>
             <p>{{$announcement->price}} €</p>
             <div class="card-footer d-flex justify-content-between mb-3">
-              <a href="{{route('category.announcements', $announcement->category->id)}}">#{{$announcement->category->name}}</a>
+              <a href="{{route('category.announcements', $announcement->category->id)}}">{{$announcement->category->name}}</a>
               <i>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement->user->name}}</i>
               @if($announcement->user->id == Auth::id())
               <a href="{{route('announcements.edit', $announcement)}}"><i class="fas fa-solid fa-pen"></i></a>
               @endif
             </div>
-            <div><button type="submit" class="btn btn-primary">Ver detalles </button></div>
+            <div><button type="submit" class="btn btn-primary"> <a href="{{route('announcements.show', $announcement)}}">Ver detalles</a> </button></div>
           </div>
         </div>
       </div>
     @endforeach
     </div>
   </div>
-
+<!--Cards de chollos-->
   <div class="row my-5 justify-content-center align-items-center">
     <div class="col-2"> <a href="products.html" target="_blank"><i class="fas fa-car fa-2x icono"></i></a></div>
     <div class="col-2"> <a href="products.html" target="_blank"><i class="fas fa-tshirt fa-2x icono"></i></a></div>

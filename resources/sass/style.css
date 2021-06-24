@@ -18,6 +18,13 @@ body{
 	color:#713c98;
 }
 
+.footer_color{
+	color:#713c98;
+}
+.title_under_navBar{
+	color:#713c98;
+}
+
 .formulario{
 	background-color:#f6f5f5;
 }
@@ -46,8 +53,13 @@ body{
 	font-weight: bold;
 }
 
-.botabtn-primary:hover {
-	border: 2px; 
+.btn-primary:hover {
 	color: #7329a8;
 	background-color: white;
 }
+
+.card-body button a{
+	text-decoration: none;
+	color: white;
+}
+
