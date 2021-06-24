@@ -7,7 +7,7 @@
 <!--h1>Anuncios por categoria: {{--$category->name--}}</h1-->
 
 @foreach($announcements as $announcement)
-<div class="row my-3">
+<div class="row formulario my-5">
     <div class="col-12 col-md-8 offset-md-2">
         <div class="card card border-0 shadow" style="width: 30rem;">
             <div class="card-header">

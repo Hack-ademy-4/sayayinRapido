@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
-<section class="row">
+<div class="container my-5 ">
+<section class="row formulario form_login my-5">
 	<div class="col-12 col-md-6 offset-md-3">
+		<h2 class="text-center cabeza my-5">Añadir Nuevo Anúncio</h2>
 		@if(Session::has("edit"))
 		<form action="{{route('announcements.edit', Session::get('edit'))}}" method="POST" class="@if($errors->any()) was-validated @endif" novalidate>
 		@endif
@@ -43,8 +45,9 @@
 					</div>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">Publicar</button>
+			<button type="submit" class="btn btn-primary botoncitos">Publicar</button>
 		</form>
 	</div>
 </section>
+</div>
 @endsection

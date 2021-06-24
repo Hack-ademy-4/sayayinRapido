@@ -29,6 +29,7 @@
               <a href="{{route('announcements.edit', $announcement)}}"><i class="fas fa-solid fa-pen"></i></a>
               @endif
             </div>
+            <div><button type="submit" class="btn btn-primary">Ver detalles </button></div>
           </div>
         </div>
       </div>
@@ -46,32 +47,32 @@
   <div class="row cartas">
     <h2 class="text-center titulo2 my-3">Chollos imperdiveis de verano <i class="fas fa-umbrella-beach"></i></h2>
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="card my-5"><img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"
+      <div class="card my-5"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top"
           alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Jardin</h5>
+          <h5 class="card-title">Jardín</h5>
           <p class="card-text">Aproveche el solecito.</p>
-          <a href="#!" class="btn btn-primary">Button</a>
+          <a href="#!" class="btn btn-primary">Ver mas</a>
         </div>
       </div>
     </div>
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="card my-5"><img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"
+      <div class="card my-5"><img src="https://images.unsplash.com/photo-1499720565725-bd574541a3ee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top"
           alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Equipos de kayak</h5>
+          <h5 class="card-title">Kayak</h5>
           <p class="card-text">Jugar en el agua siempre es divertido.</p>
-          <a href="#!" class="btn btn-primary">Button</a>
+          <a href="#!" class="btn btn-primary">Ver mas</a>
         </div>
       </div>
     </div>
     <div class="col-md-6 col-lg-4 col-xl-3">
-      <div class="card my-5"><img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top"
+      <div class="card my-5"><img src="https://cdn.pixabay.com/photo/2018/08/08/00/09/inliner-3591101__340.jpg" class="card-img-top"
           alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Deportes </h5>
+          <h5 class="card-title">Patines </h5>
           <p class="card-text">Equipamentos de pandel y otros.</p>
-          <a href="#!" class="btn btn-primary">Button</a>
+          <a href="#!" class="btn btn-primary">Ver mas</a>
         </div>
       </div>
     </div>
