@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnounceController;
 
 /*
@@ -19,6 +20,13 @@ use App\Http\Controllers\AnnounceController;
 Route::get('/',[PublicController::class,"index"])->name('home');
 //Anuncios relacionados con categorias
 Route::get('/category/{id}/announcements', [PublicController::class, "AnnouncementsByCategory"])->name('category.announcements');
+
+//Ruta de usuario revisor
+Route::get('/revisor',[RevisorController::class,"index"])->name("revisor.home");
+//Aceptar y rechazar anuncio revisor
+Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.announcement.accept');
+Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.announcement.reject');
+
 
 
 // -- Anuncios Por usuario --

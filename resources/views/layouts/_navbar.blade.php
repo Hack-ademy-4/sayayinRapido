@@ -47,6 +47,17 @@
                         class=" nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-decoration-none text-reset"
                         href="#">Logout</a>
                 </li>
+
+                @if (Auth::user()->is_revisor)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('revisor.home') }}">
+                        Revisor Casa
+                        <span class="badge rounded-pill bg-danger">
+                            {{\App\Models\Announcement::ToBeRevisionedCount() }}
+                        </span>
+                    </a>
+                </li>
+                @endif
                 @endguest
             </ul>
         </div>
