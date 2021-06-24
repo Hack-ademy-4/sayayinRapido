@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AnnounceController;
 
 /*
@@ -16,7 +16,7 @@ use App\Http\Controllers\AnnounceController;
 */
 
 //Ruta home
-Route::get('/',[HomeController::class,"index"])->name('home');
+Route::get('/',[PublicController::class,"index"])->name('home');
 
 //Anuncios
 
@@ -25,7 +25,7 @@ Route::get('/new/announcements', [AnnounceController::class, "create"])->name('a
 Route::post('/new/announcements', [AnnounceController::class, "store"])->middleware("auth");
 
 //Anuncios relacionados con categorias
-Route::get('/category/{name}/{id}/announcements', [HomeController::class, "AnnouncementsByCategory"])->name('category.announcements');
+Route::get('/category/{id}/announcements', [PublicController::class, "AnnouncementsByCategory"])->name('category.announcements');
 
 //Leer Anuncios
 Route::get('/announcements', [AnnounceController::class,"index"])->name("announcements.index");

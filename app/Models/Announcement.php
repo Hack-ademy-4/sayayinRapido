@@ -11,13 +11,13 @@ class Announcement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["title","body","price"];
+    protected $fillable = ["title", "body", "category_id", "price"];
 
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-    public function categories(){
-        return $this->belongsTo(Category::class); // No se si esto esta bien. Creo que 1-n
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 }

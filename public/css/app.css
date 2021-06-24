@@ -32,6 +32,11 @@ body{
 .titulo2{
 	color:#713c98;
 }
+.form-control.is-invalid, .was-validated .form-control:invalid {
+	margin-bottom: unset; /*1rem;*/
+	background-image: none;
+	border-color: #f93154;
+}
 @charset "UTF-8";
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)

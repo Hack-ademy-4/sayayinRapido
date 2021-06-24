@@ -6,7 +6,7 @@ use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class PublicController extends Controller
 {
     public function index(){
 
@@ -16,10 +16,10 @@ class HomeController extends Controller
         
     }
 
-    public function AnnouncementsByCategory($name,$category_id){
+    public function AnnouncementsByCategory($category_id){
         $categories = Category::find($category_id);
-        $announcements = $categories->announcement()->paginate(5);
+        $announcements = $categories->announcements()->paginate(5);
         
-        return view("welcome",compact('category', 'announcements'));
+        return view("welcome",compact('announcements'));
     }
 }
