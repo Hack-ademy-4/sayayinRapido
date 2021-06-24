@@ -7,10 +7,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown py-2">
-                    <a id="navbarDropdown" class=" nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <span>Categorias</span>
+                    <a id="navbarDropdown" class=" nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorias
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach($categories as $category)
                             <li>
                                 <a class="dropdown-item text-decoration-none text-reset" href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">{{$category->name}}</a>
