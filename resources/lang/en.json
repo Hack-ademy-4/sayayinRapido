@@ -1,0 +1,29 @@
+{
+	"__coment1": "EL NAVBAR",
+	"Categorias": "Categories",
+	"Nuevo Anuncio": "New Announcement",
+
+	"__coment2": "ANNOUNCEMENTS/CREATE",
+	"Añadir Nuevo Anúncio": "Add New Announcement",
+	"Titulo del articulo": "Article title",
+	"Describe aqui el articulo": "Describe the article here",
+	"Precio": "Price",
+	"Seleciona una categoria": "Select a category",
+	"Titulo": "Title",
+	"Descripción": "Descrition",
+	"Categoria": "Category",
+	"Publicar": "Publish",
+
+	"__comment3": "COMPONENTS/CARD-AD",
+	"Ver mas": "More",
+
+	"__comment4": "REVISOR",
+	"Anuncio": "Announce",
+	"Usuario": "User",
+	"Aceptar": "Accept",
+	"Rechazar": "Reject",
+	"No hay anuncios para revisar":"There are no ads to review",
+
+	"__comment5": "PAGINA PRINCIPAL WELCOME",
+	"Los chollos que no te puedes perdes este verano": "The bargains that you cannot miss this summer"
+}

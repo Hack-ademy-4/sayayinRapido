@@ -1,0 +1,29 @@
+{
+	"__coment1": "EL NAVBAR",
+	"Categorias": "Categorie",
+	"Nuevo Anuncio": "Nuovo annuncio",
+
+	"__coment2": "ANNOUNCEMENTS/CREATE",
+	"Añadir Nuevo Anúncio": "Aggiungi nuovo annuncio",
+	"Titulo del articulo": "Titolo dell'articolo",
+	"Describe aqui el articulo": "Descrivi qui l'articolo",
+	"Precio": "Prezzo",
+	"Seleciona una categoria": "Seleziona una categoria",
+	"Titulo": "Titolo",
+	"Descripción": "Descrizione",
+	"Categoria": "Categoria",
+	"Publicar": "Publicare",
+
+	"__comment3": "COMPONENTS/CARD-AD",
+	"Ver mas": "Vedi altro",
+
+	"__comment4": "REVISOR",
+	"Anuncio": "Comunicato",
+	"Usuario": "Utente",
+	"Aceptar": "Accettare",
+	"Rechazar": "Rifiutare",
+	"No hay anuncios para revisar":"Non ci sono annunci da recensirew",
+
+	"__comment5": "PAGINA PRINCIPAL WELCOME",
+	"Los chollos que no te puedes perdes este verano": "Le occasioni da non perdere quest'estate"
+}

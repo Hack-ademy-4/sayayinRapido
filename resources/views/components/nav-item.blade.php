@@ -17,7 +17,7 @@
 			<a class="nav-link text-white" href="{{ route($route ?? 'home') }}">
 		@endif
 			{{$slot}}
-			@if(isset($badge))
+			@if(isset($badge) && $badge > 0)
 			<span class="position-relative top-0 start-7 translate-middle badge rounded-pill bg-danger">
 				{{ $badge }}
 			</span>

@@ -7,12 +7,12 @@
       <div class='col-12'>
           <div class="card">
               <div class="card-header">
-                  Anuncio #{{$announcement->id}}
+                  {{__('Anuncio')}} #{{$announcement->id}}
               </div>
               <div class="card-body">
                   <div class="row">
                       <div class="col-md-3">
-                          <h3>Usuario</h3>
+                          <h3>{{__('Usuario')}}</h3>
                       </div>
                       <div class="col-md-9">
                           #{{$announcement->user->id}}
@@ -23,7 +23,7 @@
                   <hr>
                   <div class="row">
                       <div class="col-md-3">
-                          <h3>Titulo</h3>
+                          <h3>{{__('Titulo')}}</h3>
                       </div>
                       <div class="col-md-9">
                           {{$announcement->title}}
@@ -47,18 +47,18 @@
       <div class="col-md-6">
       <form action="{{route('revisor.announcement.reject',['id'=>$announcement->id])}}" method="POST">
           @csrf
-          <button type="submit" class="btn btn-danger">Rechazar</button>
+          <button type="submit" class="btn btn-danger">{{__('Rechazar')}}</button>
       </form>
       </div>
       <div class="col-md-6 text-right">
           <form action="{{route('revisor.announcement.accept',['id'=>$announcement->id])}}" method="POST">
               @csrf
-              <button type="submit" class="btn btn-success">Aceptar</button>
+              <button type="submit" class="btn btn-success">{{__('Aceptar')}}</button>
           </form>
       </div>
   </div>
 </div>
 @else
-    <h3 class="text-center"> No hay anuncios para revisar </h3>
+    <h3 class="text-center"> {{__('No hay anuncios para revisar')}} </h3>
 @endif
 @endsection
