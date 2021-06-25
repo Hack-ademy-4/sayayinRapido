@@ -98,7 +98,7 @@ return [
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field is required.',
+    'required' => 'Questo campo è obbligatorio.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
@@ -136,17 +136,17 @@ return [
 
     'custom' => [
         'title' => [
-            'required' => 'The ad must have a title',
+            'required' => "L'annuncio deve avere un titolo",
         ],
         'body' => [
-            'required' => 'Ad body cannot be empty'
+            'required' => "La descrizione dell'annuncio non può essere vuota"
         ],
         'category_id' => [
-            'required' => 'Select a category',
-            'exists:categories,id' => 'This category does not exist'
+            'required' => 'Seleziona una categoria',
+            'exists:categories,id' => 'La categoria non esiste'
         ],
         'price' => [
-            'required' => 'The price cannot be empty, put a price on the item.'
+            'required' => "Il prezzo non può essere vuoto, inserisci un prezzo sull'articolo. ."
         ]
     ],
 
