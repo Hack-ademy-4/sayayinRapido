@@ -4,6 +4,10 @@ body{
 	font-family:'Source Sans Pro', sans-serif; 
 }
 
+.start-7 {
+	left: 7%;
+}
+
 .navegacion{
 	background: rgb(140, 84, 180);
 	background: linear-gradient(228deg, rgba(140,84,180,1) 38%, rgba(111,152,212,1) 100%); 
@@ -12,6 +16,9 @@ body{
 	justify-content: center;
 	align-items: center;
 	color: aliceblue;
+}
+.rapidoLogo > img {
+	width: 32%;
 }
 
 .cabeza{

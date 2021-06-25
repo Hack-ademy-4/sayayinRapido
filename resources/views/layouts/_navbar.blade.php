@@ -1,7 +1,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg py-0 border-bottom navegacion" id="mainNav">
     <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger text-white Rapidologo" href="{{route('home')}}"> <img src="."> Sayayin Rapido</a>
+        <a class="navbar-brand js-scroll-trigger text-white rapidoLogo" href="{{route('home')}}"> <img src="/img/logosayayin.png" class="nav-logo"> Sayayin Rapido</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -28,13 +28,13 @@
                 @guest
                 @if (Route::has('login'))
                 <li class="nav-item mx-0 mx-lg-1 ">
-                    <a class="borderMarcador nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white"
+                    <a class="borderMarcador nav-link py-3 px-0 px-lg-3 text-white"
                         href="{{route('login')}}"><span>Login</span></a>
                 </li>
                 @endif
                 @if (Route::has('register'))
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="borderMarcador nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-white"
+                    <a class="borderMarcador nav-link py-3 px-0 px-lg-3 text-white"
                         href="{{route('register')}}"><span>Register</span></a>
                 </li>
                 @endif
@@ -44,15 +44,15 @@
                         @csrf
                     </form>
                     <a id="logoutBtn"
-                        class=" nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-decoration-none text-reset"
+                        class=" nav-link py-3 px-0 px-lg-3 text-decoration-none text-reset"
                         href="#">Logout</a>
                 </li>
 
                 @if (Auth::user()->is_revisor)
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('revisor.home') }}">
+                <li class="nav-item mx-0 mx-lg-1 py-2">
+                    <a class="nav-link text-white" href="{{ route('revisor.home') }}">
                         Revisor Casa
-                        <span class="badge rounded-pill bg-danger">
+                        <span class="position-relative top-0 start-7 translate-middle badge rounded-pill bg-danger">
                             {{\App\Models\Announcement::ToBeRevisionedCount() }}
                         </span>
                     </a>
