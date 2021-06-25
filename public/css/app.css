@@ -70,6 +70,13 @@ body{
 	color: white;
 }
 
+.carousel-control-next-icon::after {
+  content: "";
+}
+
+.carousel-control-prev-icon::after {
+    content: "";
+}
 
 .form-control.is-invalid, .was-validated .form-control:invalid {
 	margin-bottom: unset; /*1rem;*/

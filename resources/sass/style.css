@@ -70,3 +70,10 @@ body{
 	color: white;
 }
 
+.carousel-control-next-icon::after {
+  content: "";
+}
+
+.carousel-control-prev-icon::after {
+    content: "";
+}
