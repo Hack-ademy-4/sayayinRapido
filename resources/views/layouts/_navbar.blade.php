@@ -55,6 +55,8 @@
                 @endif
                 @endguest
                 <x-nav-item lang="es"/>
+                <x-nav-item lang="it"/>
+                <x-nav-item lang="en" nation="gb"/>
             </ul>
         </div>
     </div>
