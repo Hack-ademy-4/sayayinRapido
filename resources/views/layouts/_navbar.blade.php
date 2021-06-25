@@ -25,40 +25,31 @@
                 <li class="nav-item py-2">
                     <a class="nav-link text-white" href="{{ route('announcements.create') }}">Nuevo Anuncio</a>
                 </li>
+                <x-nav-item route="announcements.create">
+                    Nuevo Anuncio
+                </x-nav-item>
                 @guest
                 @if (Route::has('login'))
-                <li class="nav-item mx-0 mx-lg-1 ">
-                    <a class="borderMarcador nav-link py-3 px-0 px-lg-3 text-white"
-                        href="{{route('login')}}"><span>Login</span></a>
-                </li>
+                <x-nav-item route="login">
+                    Login
+                </x-nav-item>
                 @endif
                 @if (Route::has('register'))
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="borderMarcador nav-link py-3 px-0 px-lg-3 text-white"
-                        href="{{route('register')}}"><span>Register</span></a>
-                </li>
+                <x-nav-item route="register">
+                    Register
+                </x-nav-item>
                 @endif
                 @else
-                <li class="nav-item mx-0 mx-lg-1">
-                    <form id="logoutForm" action="{{route('logout')}}" method="POST">
-                        @csrf
-                    </form>
-                    <a id="logoutBtn"
-                        class=" nav-link py-3 px-0 px-lg-3 text-decoration-none text-reset"
-                        href="#">Logout</a>
-                </li>
-
+                <x-nav-item route="logout">
+                    Logout
+                </x-mav-item>
                 @if (Auth::user()->is_revisor)
-                <li class="nav-item mx-0 mx-lg-1 py-2">
-                    <a class="nav-link text-white" href="{{ route('revisor.home') }}">
-                        Revisor Casa
-                        <span class="position-relative top-0 start-7 translate-middle badge rounded-pill bg-danger">
-                            {{\App\Models\Announcement::ToBeRevisionedCount() }}
-                        </span>
-                    </a>
-                </li>
+                <x-nav-item route="revisor.home" badge="{{ \App\Models\Announcement::ToBeRevisionedCount() }}">
+                    Revisor casa
+                </x-nav-item>
                 @endif
                 @endguest
+                <x-nav-item lang="es"/>
             </ul>
         </div>
     </div>

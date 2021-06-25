@@ -25,17 +25,8 @@
 
     <script src="{{mix('js/app.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
-
-    <script>
-        //script boton de logout
-        const logout = document.getElementById('logoutBtn');
-        if (logout) {
-            logout.addEventListener('click', (e) => {
-                e.preventDefault();
-                const form = document.getElementById('logoutForm').submit();
-            });
-        }
-    </script>
+    @stack('scripts');
+    
 </body>
 
 </html>
