@@ -11,7 +11,7 @@
   @if(session('access.denied.revisor.only'))
   <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
   @endif
-  <h2 class="my-5 text-center title_under_navBar">¿Qué estás buscando hoy?</h2>
+  <h2 class="my-5 text-center title_under_navBar">{{__('ui.welcome')}}</h2>
   <div class="container-fluid">
     <div class="row">
     @foreach($announcements as $announcement)
