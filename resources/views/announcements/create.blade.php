@@ -10,40 +10,10 @@
 		<form action="{{route('announcements.create')}}" method="POST" class="@if($errors->any()) was-validated @endif" novalidate>
 			@csrf
 			<div class="mb-4">
-				<div class="form-floating mb-4">
-					<input type="text" class="form-control" id="create-title" placeholder="Titulo del articulo" name="title" value="{{old('title')}}" required>
-					<label for="create-title">Titulo</label>
-					<div class="invalid-feedback">
-						{{$errors->first('title')}}
-					</div>
-				</div>
-				<div class="form-floating mb-4">
-					<textarea class="form-control" placeholder="Describe aqui el articulo" id="create-desc" style="height: 100px" name="body" required>{{@old('body')}}</textarea>
-					<label for="create-desc">Descripcion</label>
-					<div class="invalid-feedback">
-						{{$errors->first('body')}}
-					</div>
-				</div>
-				<div class="form-floating mb-4">
-					
-					<input type="number" step="0.01" class="form-control" id="create-price" aria-describedby="priceHelp" name="price" value="{{old("price")}}" required>
-					<label for="create-price">Precio</label>
-					<div class="invalid-feedback">
-						{{$errors->first('price')}}
-					</div>
-				</div>
-				<div class="form-floating mb-4">
-					<select class="form-select" id="create-categories" aria-label="Floating label select example" name="category_id" required>
-						<option @if (!old('category_id')) selected @endif value="">Selecciona una categoria</option>
-						@foreach($categories as $category)
-						<option value="{{$category->id}}" @if (old('category_id') == $category->id) selected @endif>{{$category->name}}
-						@endforeach
-					</select>
-					<label for="create-categories">Selecciona una categoria</label>
-					<div class="invalid-feedback">
-						{{$errors->first('category_id')}}
-					</div>
-				</div>
+				<x-input placeholder="Titulo del articulo" name="title" label="Titulo"/>
+				<x-input placeholder="Describe aqui el articulo" name="body" label="Descripcion" type="textarea"/>
+				<x-input placeholder="Precio" name="price" type="number" label="precio"/>
+				<x-input placeholder="Seleciona una categoria" name="category_id" label="Categoria" :items=$categories type="select"/>
 			</div>
 			<button type="submit" class="btn btn-primary botoncitos">Publicar</button>
 		</form>

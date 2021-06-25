@@ -21,10 +21,15 @@
                         @endforeach
                     </ul>
                 </li>
-
-                <li class="nav-item py-2">
-                    <a class="nav-link text-white" href="{{ route('announcements.create') }}">Nuevo Anuncio</a>
-                </li>
+                {{--
+                Nuevo componente x-nav-item que mete dentro un <li> con su <a> con href al parametro route.
+                parametros:
+                 route= string - nombre de la ruta de laravel
+                 badge= [number] - muestra un badge con el number
+                 lang= string - Muestra las banderitas acorde con el idioma
+                 nation= [string] - opcional
+                 class= [string] - añade clase al <li>
+                --}}
                 <x-nav-item route="announcements.create">
                     Nuevo Anuncio
                 </x-nav-item>
