@@ -28,6 +28,12 @@ body{
 .footer_color{
 	color:#713c98;
 }
+a.footer_color {
+	text-decoration: none;
+}
+a.footer_color:hover {
+	text-decoration: underline;
+}
 .title_under_navBar{
 	color:#713c98;
 }

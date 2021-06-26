@@ -17,9 +17,10 @@ class PublicController extends Controller
     }
 
     public function AnnouncementsByCategory($category_id){
-        $categories = Category::find($category_id);
+        $categories = Category::findOrFail($category_id);
         $announcements = $categories->announcements()->where('is_accepted',true)->orderByDesc('created_at')->paginate(5);
         
+        session()->now("secondTitle", $categories->name);
         return view("welcome",compact('announcements'));
     }
 

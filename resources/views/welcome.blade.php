@@ -11,7 +11,11 @@
   @if(session('access.denied.revisor.only'))
   <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
   @endif
+  @if (session('secondTitle'))
+  <h2 class="my-5 text-center title_under_navBar">{{__('ui.secondTitle', ['category' => session('secondTitle')])}}</h2>
+  @else
   <h2 class="my-5 text-center title_under_navBar">{{__('ui.welcome')}}</h2>
+  @endif
   <div class="container-fluid">
     <div class="row">
     @foreach($announcements as $announcement)
