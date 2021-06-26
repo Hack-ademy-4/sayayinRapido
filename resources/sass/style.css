@@ -28,6 +28,12 @@ body{
 .footer_color{
 	color:#713c98;
 }
+a.footer_color {
+	text-decoration: none;
+}
+a.footer_color:hover {
+	text-decoration: underline;
+}
 .title_under_navBar{
 	color:#713c98;
 }
@@ -54,19 +60,18 @@ body{
 .form_login{
 	padding-bottom: 3rem;
 }
-
+/*
 .btn-primary{
 	background-color:#7329a8 !important;
 	font-weight: bold;
 }
-
+*/
 .btn-primary:hover {
-	color: #7329a8;
-	background-color: white;
+	color: #7329a8 !important;
+	background-color: white !important;
 }
 
 .card-body button a{
 	text-decoration: none;
 	color: white;
 }
-

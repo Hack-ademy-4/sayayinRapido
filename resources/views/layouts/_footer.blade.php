@@ -10,10 +10,7 @@
                     <h6 class="text-uppercase footer_color fw-bold mb-4">
                         <i class="fas fa-gem me-3"></i>Sayayin Rapido
                     </h6>
-                    <p class="footer_color">Sayayin Rapido es un equipo de personas que aspiran a hacer un mundo colaborativo
-                        y más
-                        sostenible. Fomentando la reutilización de los
-                        objetos para un mundo mejor.</p>
+                    <p class="footer_color">{{__("footer.descripcion")}}</p>
                 </div>
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                     <h6 class="text-uppercase  footer_color fw-bold mb-4">Productos</h6>
@@ -23,14 +20,14 @@
                     <p><a href="#!" class="footer_color">Ver todo</a></p>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase footer_color fw-bold mb-4">Soporte</h6>
-                    <p><a href="#!" class="footer_color">Preguntas Frecuentes</a></p>
-                    <p> <a href="#!" class="footer_color">Reglas de Publicacion</a></p>
-                    <p><a href="#!" class="footer_color">Consejos de seguridad</a></p>
-                    <p><a href="#!" class="footer_color">Help</a></p>
+                    <h6 class="text-uppercase footer_color fw-bold mb-4">{{__("footer.soporte")}}</h6>
+                    <p><a href="#!" class="footer_color">{{__("footer.faq")}}</a></p>
+                    <p> <a href="#!" class="footer_color">{{__("footer.rules")}}</a></p>
+                    <p><a href="#!" class="footer_color">{{__("footer.consejos")}}</a></p>
+                    <p><a href="#!" class="footer_color">{{__("footer.help")}}</a></p>
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <h6 class="text-uppercase footer_color fw-bold mb-4">Contacto</h6>
+                    <h6 class="text-uppercase footer_color fw-bold mb-4">{{__("Contacto")}}</h6>
                     <p class="footer_color"><i class="fas fa-home me-3 footer_color"></i> Sevilla, Avenida Don Juan, España</p>
                     <p class="footer_color"><i class="fas fa-envelope me-3 footer_color"></i> sayayin@rapido.com</p>
                     <p class="footer_color"><i class="fas fa-phone me-3 footer_color"></i> + 34 634 567 88</p>

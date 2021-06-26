@@ -32,6 +32,7 @@ class AnnouncementRequest extends FormRequest
         ];
     }
 
+    /* ------  ver resources/lang/[lang]/validation.php:custom
     public function messages(){
         
         return [
@@ -42,4 +43,5 @@ class AnnouncementRequest extends FormRequest
             'price.required' => 'El precio no puede estar vacío, ponga un precio al artículo.'
         ];
     }
+    */
 }

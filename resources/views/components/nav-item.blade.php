@@ -1,4 +1,6 @@
-
+@php
+	$route = $route ?? "home";
+@endphp
 <li {{ $attributes->merge(["class" => "nav-item mx-0 mx-lg-1 py-2"]) }}>
 	@if(isset($lang))
 		<form action="{{route('locale',['locale'=>$lang])}}" method="POST">
@@ -14,29 +16,30 @@
 			</form>
 			<a id="logoutBtn" class="nav-link text-white" href="#">
 		@else
-			<a class="nav-link text-white" href="{{ route($route ?? 'home') }}">
+			<a class="nav-link text-white" href="{{ route($route) }}">
 		@endif
-			{{$slot}}
-			@if(isset($badge))
-			<span class="position-relative top-0 start-7 translate-middle badge rounded-pill bg-danger">
-				{{ $badge }}
-			</span>
+				{{$slot}}
+			@if(isset($badge) && $badge > 0)
+				<span class="position-relative top-0 start-7 translate-middle badge rounded-pill bg-danger">
+					{{ $badge }}
+				</span>
 			@endif
 		</a>
 	@endif
 </li>
 
-@if ($route="logout")
-	@push('scripts')
-		<script>
-			//script boton de logout
-			const logout = document.getElementById('logoutBtn');
-			if (logout) {
-				logout.addEventListener('click', (e) => {
-					e.preventDefault();
-					document.getElementById('logoutForm').submit();
-				});
-			}
+@if($route === "logout")
+@push('scripts')
+	<script>
+		//script boton de logout
+		const logout = document.getElementById('logoutBtn');
+		if (logout) {
+			logout.addEventListener('click', (e) => {
+				e.preventDefault();
+				document.getElementById('logoutForm').submit();
+			});
+		}
 	</script>
-	@endpush
+@endpush
+
 @endif

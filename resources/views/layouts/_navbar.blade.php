@@ -8,7 +8,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown py-2">
                     <a id="navbarDropdown" class=" nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorias
+                        {{__('Categorias')}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach($categories as $category)
@@ -31,17 +31,17 @@
                  class= [string] - añade clase al <li>
                 --}}
                 <x-nav-item route="announcements.create">
-                    Nuevo Anuncio
+                    {{__('Nuevo Anuncio')}}
                 </x-nav-item>
                 @guest
                 @if (Route::has('login'))
                 <x-nav-item route="login">
-                    Login
+                    {{__('ui.login')}}
                 </x-nav-item>
                 @endif
                 @if (Route::has('register'))
                 <x-nav-item route="register">
-                    Register
+                    {{__('ui.register')}}
                 </x-nav-item>
                 @endif
                 @else

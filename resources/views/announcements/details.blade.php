@@ -1,30 +1,64 @@
 @extends('layouts.app')
 @section('content')
-<h2 class="text-center title_under_navBar my-5">Detalle del anuncio {{$announcement->name}}</h2>
-<div class="container my-5">
-    <div class="row my-3">
-        <div class="col-6 col-md-8 offset-md-2">
-            <div class="card card border-0 shadow" style="width: 30rem;">
-                <div class="card-header">
-                    {{$announcement->title}}
-                </div>
-                <p> {{$announcement->price}}</p>
-                <div class="car-body d-flex">
-                    <img src="https://picsum.photos/id/1/200/300" alt="">
-                    <p>{{$announcement->body}}</p>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <strong>Categoria:{{$announcement->category->name}}</strong>
-                    <i class="bi bi-calendar-check px-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                            fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
-                            <path
-                                d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                            <path
-                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                            <i>{{$announcement->created_at->format('d/m/Y')}}-{{$announcement->user->name}}</i>
-                </div>
-            </div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div id="carrusell-detail" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrusell-detail" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrusell-detail" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
+    <div class="col-12 col-md-4">
+      <h2>{{$announcement->title}}</h2>
+      <p>{{$announcement->price}} €</p>
+      <p>{{$announcement->body}}</p>
+    </div>
+  </div>
 </div>
 @endsection
+
+@push('css')
+<style>
+  .carousel-control-next-icon::after {
+    content: "";
+  }
+
+  .carousel-control-prev-icon::after {
+      content: "";
+  }
+</style>
+@endpush
