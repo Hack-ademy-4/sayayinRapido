@@ -3,7 +3,8 @@
 @section('content')
 @if($announcement)
 <div class='container'>
-  <div class='row my-4'>
+  <div class='row my-5'>
+  <h2 class="text-center title_under_navBar my-4">Revise los productos abajo</h2>
       <div class='col-12'>
           <div class="card">
               <div class="card-header">
@@ -43,14 +44,14 @@
           </div>
       </div>
   </div>
-  <div class="row justify-content-center">
-      <div class="col-md-6">
+  <div class="row h-100">
+      <div class="col-md-6 text-center my-4">
       <form action="{{route('revisor.announcement.reject',['id'=>$announcement->id])}}" method="POST">
           @csrf
           <button type="submit" class="btn btn-danger">{{__('Rechazar')}}</button>
       </form>
       </div>
-      <div class="col-md-6 text-right">
+      <div class="col-md-6 text-center my-4">
           <form action="{{route('revisor.announcement.accept',['id'=>$announcement->id])}}" method="POST">
               @csrf
               <button type="submit" class="btn btn-success">{{__('Aceptar')}}</button>

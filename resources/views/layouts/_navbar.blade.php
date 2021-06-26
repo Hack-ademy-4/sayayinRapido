@@ -1,8 +1,8 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg py-0 border-bottom navegacion" id="mainNav">
     <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger text-white rapidoLogo" href="{{route('home')}}"> <img src="/img/logosayayin.png" class="nav-logo"> Sayayin Rapido</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars"></i>
+        <a class="navbar-brand js-scroll-trigger text-white rapidoLogo" href="{{route('home')}}"> <img src="/img/logorapido5.png" class="nav-logo"></a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">

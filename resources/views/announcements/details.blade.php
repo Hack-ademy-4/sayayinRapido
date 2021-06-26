@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-4">
+<div class="container my-5">
   <div class="row">
+  <h2 class="text-center title_under_navBar my-5">{{__('Detalles del producto')}}</h2>
     <div class="col-12 col-md-6">
       <div id="carrusell-detail" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
