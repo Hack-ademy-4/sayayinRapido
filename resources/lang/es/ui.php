@@ -7,4 +7,5 @@ return [
     'register' => 'Registrate',
     'logout' => 'Salir',
     'revisor' => 'Supervisor',
+    'resgisterMsg' => 'No estas registrado'
 ];

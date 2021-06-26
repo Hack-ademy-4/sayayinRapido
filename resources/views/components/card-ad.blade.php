@@ -17,10 +17,12 @@
 		<div class="card-footer d-flex justify-content-between mb-3">
 			<a href="{{route('category.announcements', $ad->category->id)}}">{{$ad->category->name}}</a>
 			<i>{{$ad->created_at->format('d/m/Y')}} - {{$ad->user->name}}</i>
+		</div>
+		<div>
+			<a href="{{route('announcements.show', $ad)}}" class="btn btn-primary">{{__("Ver mas")}}</a>
 			@if($edit && $ad->user->id == Auth::id())
 			<a href="{{route('announcements.edit', $ad)}}"><i class="fas fa-solid fa-pen"></i></a>
 			@endif
 		</div>
-		<div><button type="submit" class="btn btn-primary"> <a href="{{route('announcements.show', $ad)}}">{{__("Ver mas")}}</a> </button></div>
 	</div>
 </div>
