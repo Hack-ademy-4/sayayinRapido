@@ -96,4 +96,11 @@ a.footer_color:hover {
     background: linear-gradient(228deg, rgba(140,84,180,1) 38%, rgba(111,152,212,1) 100%);
     padding: 10px;
   }
+	.nav-logo{
+		margin-top: -23px;
+	}
+
+	#mainNav .navbar-toggler{
+		margin-top: -10px;
+	}
 }
