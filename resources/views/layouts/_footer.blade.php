@@ -13,11 +13,11 @@
                     <p class="footer_color">{{__("footer.descripcion")}}</p>
                 </div>
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase  footer_color fw-bold mb-4">Productos</h6>
-                    <p><a href="#!" class="footer_color">Jardin</a></p>
-                    <p><a href="#!" class="footer_color">Cocina</a></p>
-                    <p><a href="#!" class="footer_color">Auto</a></p>
-                    <p><a href="#!" class="footer_color">Ver todo</a></p>
+                    <h6 class="text-uppercase  footer_color fw-bold mb-4">{{__('Productos')}}</h6>
+                    <p><a href="#!" class="footer_color">{{__('Jardin')}}</a></p>
+                    <p><a href="#!" class="footer_color">{{__('Cocina')}}</a></p>
+                    <p><a href="#!" class="footer_color">{{__('Auto')}}</a></p>
+                    <p><a href="#!" class="footer_color">{{__('Ver todo')}}</a></p>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                     <h6 class="text-uppercase footer_color fw-bold mb-4">{{__("footer.soporte")}}</h6>

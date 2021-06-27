@@ -46,11 +46,11 @@
                 @endif
                 @else
                 <x-nav-item route="logout">
-                    Logout
+                    {{__('ui.logout')}}
                 </x-nav-item>
                 @if (Auth::user()->is_revisor)
                 <x-nav-item route="revisor.home" badge="{{ \App\Models\Announcement::ToBeRevisionedCount() }}">
-                    Revisor Anuncios
+                    {{__("ui.revisor")}}
                 </x-nav-item>
                 @endif
                 @endguest
