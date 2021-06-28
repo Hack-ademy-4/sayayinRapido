@@ -1,6 +1,12 @@
+html, body{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	overflow-x: hidden;
+}
+
 body{
-	margin:0px;
-	padding:0px;
 	font-family:'Source Sans Pro', sans-serif; 
 }
 
@@ -11,7 +17,7 @@ body{
 .navegacion{
 	background: rgb(140, 84, 180);
 	background: linear-gradient(228deg, rgba(140,84,180,1) 38%, rgba(111,152,212,1) 100%); 
-	height: 10vh;
+	height: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -76,6 +82,9 @@ a.footer_color:hover {
 	color: white;
 }
 
+.cards-detalles{ 
+box-shadow:0px 0px 5px black;
+}
 
 /* ---------------------- navbar ------------------------------------*/
 @media (max-width: 991.98px) {
