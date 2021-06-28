@@ -3,19 +3,22 @@
 <!--Aqui empezamos con principal-->
 <div class="container-fluid">
   <h1 class="text-center title_under_navBar my-5">Bienvenido a Rapido.es</h1>
-  <p class="text-muted text-center formulario">Un equipo de personas que aspiran a hacer un mundo colaborativo y más sostenible.</p>
+  <p class="text-muted text-center formulario">Un equipo de personas que aspiran a hacer un mundo colaborativo y más
+    sostenible.</p>
   <div class="row my-5">
     <div class="col-12">
       <!--iconos-->
-      <div class="row justify-content-center align-items-center gx-0">
-        <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-car fa-2x icono"></i></a></div>
-        <div class="col-1"> <a href="#" target="_blank"><i class="fab fa-gratipay fa-2x icono"></i></a></div>
-        <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-book-open fa-2x icono"></i></a></div>
-        <div class="col-1"> <a href="#" target="_blank"><i class="fas fas fa-gamepad fa-2x icono"></i></a></div>
-        <div class="col-1"> <a href="#" target="_blank"><i class="fas fas fa-running fa-2x icono"></i></a></div>
-        <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-home fa-2x icono"></i></a></div>
-        <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-mobile-alt fa-2x icono"></i></a></div>
-        <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-couch fa-2x icono"></i></a></div>
+      <div class="container-fluid">
+        <div class="row justify-content-center align-items-center gx-0">
+          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-car fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="#" target="_blank"><i class="fab fa-gratipay fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-book-open fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="#" target="_blank"><i class="fas fas fa-gamepad fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="#" target="_blank"><i class="fas fas fa-running fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-home fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-mobile-alt fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-couch fa-2x icono"></i></a></div>
+        </div>
       </div>
       <!--<div class="input-group my-5">
         <div class="form-outline">
@@ -96,7 +99,7 @@
     </div>
   </div>
 
-<!--Cards de chollos-->
+  <!--Cards de chollos-->
   <div class="row cartas gx-0">
     <h2 class="text-center titulo2 my-3">{{__('Los chollos que no te puedes perdes este verano')}} <i
         class="fas fa-umbrella-beach"></i></h2>
