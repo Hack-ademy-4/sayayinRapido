@@ -26,7 +26,7 @@
   </div>
 </div>
 <!--Cards de chollos-->
-<<div class="row my-5 justify-content-center align-items-center">
+<div class="row my-5 justify-content-center align-items-center">
   <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-mobile-alt fa-2x icono"></i></a></div>
   <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-car fa-2x icono"></i></a></div>
   <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-home fa-2x icono"></i></a></div>
