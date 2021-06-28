@@ -48,6 +48,9 @@
                 <x-nav-item route="logout">
                     {{__('ui.logout')}}
                 </x-nav-item>
+                <x-nav-item route="user.home" class="fw-bold"> {{-- TODO: ver cuenta de usuario --}}
+                    {{Auth::user()->name}}
+                </x-nav-item>
                 @if (Auth::user()->is_revisor)
                 <x-nav-item route="revisor.home" badge="{{ \App\Models\Announcement::ToBeRevisionedCount() }}">
                     {{__("ui.revisor")}}

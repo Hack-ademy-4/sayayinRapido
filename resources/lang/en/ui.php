@@ -9,4 +9,5 @@ return [
     'logout' => 'Logout',
     'revisor' => 'Monitor Ads',
     'register?' => 'You are not registered?',
+    'isRegistered?' => 'Are you already registered?'
 ];

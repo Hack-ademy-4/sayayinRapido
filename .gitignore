@@ -1,7 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
-/public/css/app.css
+public/css/*.css
+/public/js
 /storage/*.key
 /vendor
 .env
@@ -14,5 +15,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-
+.DS_Store
+Thumbs.db
+leeme.md
 .editorconfig

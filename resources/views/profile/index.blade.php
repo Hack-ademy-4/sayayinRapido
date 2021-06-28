@@ -4,10 +4,10 @@
 	<section class="row formulario">
 		<div class="col-12 col-md-6 offset-md-3 my-5">
 			<h2 class="text-center title_under_navBar">{{__("ui.register")}}</h2>
-			<form action="/register" method="POST" class="@if($errors->any()) was-validated @endif" novalidate>
+			<form action="/" method="POST" class="@if($errors->any()) was-validated @endif" novalidate>
 				@csrf
-				<x-input name="name" label="{{__('Nombre Completo')}}" />
-				<x-input name="email" label="Email" />
+				<x-input name="name" label="{{__('Nombre Completo')}}" value="{{$user->name}}" />
+				<x-input name="email" label="Email" value="{{$user->email}}" />
 				<x-input name="password" label="Password" />
 				<div class="mb-3">
 					<label for="">{{__("ui.isRegistered?")}} <a href="{{route('login')}}">{{__('aquí')}}</a></label>

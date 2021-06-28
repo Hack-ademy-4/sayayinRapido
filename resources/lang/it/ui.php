@@ -8,5 +8,6 @@ return [
     'register' => 'Registrati',
     'logout' => 'Disconnettersi',
     'revisor' => 'Monitora',
-    'register?' => 'Non sei registrato?'
+    'register?' => 'Non sei registrato?',
+    'isRegistered?' => 'Sei già registrato?'
 ];
