@@ -4,7 +4,7 @@
   <div class="row">
   <h2 class="text-center title_under_navBar my-4">{{__('Detalles del producto')}}</h2>
     <div class="col-12 col-md-6">
-      <div id="carrusell-detail" class="carousel carousel-light slide" data-bs-ride="carousel">
+      <div id="carrusell-detail" class="carousel cards-detalles carousel-light slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="col-12 col-md-4">
-      <h2>{{$announcement->title}}</h2>
+      <h2 class="text-uppercase">{{$announcement->title}}</h2>
       <p>{{$announcement->price}} €</p>
       <p>{{$announcement->body}}</p>
     </div>

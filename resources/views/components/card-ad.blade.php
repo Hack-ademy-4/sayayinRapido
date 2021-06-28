@@ -9,7 +9,7 @@
 		</a>
 	</div>
 	<div class="card-body">
-		<h5 class="card-title">{{$ad->title}}</h5>
+		<h5 class="card-title text-uppercase">{{$ad->title}}</h5>
 		<p class="card-text">
 		{{$ad->body}}
 		</p>

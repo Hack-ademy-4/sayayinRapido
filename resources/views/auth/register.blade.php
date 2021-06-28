@@ -8,7 +8,8 @@
 				@csrf
 				<x-input name="name" label="{{__('Nombre Completo')}}" />
 				<x-input name="email" label="Email" />
-				<x-input name="password" label="Password" />
+				<x-input type="password" name="password" label="Password" />
+        <x-input type="password" name="password_confirmation" label="Confirma Password" />
 				<div class="mb-3">
 					<label for="">{{__("ui.isRegistered?")}} <a href="{{route('login')}}">{{__('aquí')}}</a></label>
 				</div>
