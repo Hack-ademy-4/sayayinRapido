@@ -8,5 +8,6 @@ return [
     'register' => 'Registrate',
     'logout' => 'Salir',
     'revisor' => 'Supervisor',
-    'register?' => '¿No estas registrado?'
+    'register?' => '¿No estas registrado?',
+    'isRegistered?' => '¿Ya estas registrado?'
 ];

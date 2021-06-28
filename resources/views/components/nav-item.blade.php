@@ -1,7 +1,7 @@
 @php
 	$route = $route ?? "home";
 @endphp
-<li {{ $attributes->merge(["class" => "nav-item mx-0 mx-lg-1 py-2"]) }}>
+<li {{ $attributes->merge(["class" => "nav-item mx-0 mx-lg-1 py-0 py-md-2"]) }}>
 	@if(isset($lang))
 		<form action="{{route('locale',['locale'=>$lang])}}" method="POST">
 			@csrf

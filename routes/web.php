@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\AnnounceController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,9 @@ use App\Http\Controllers\AnnounceController;
 Route::get('/',[PublicController::class,"index"])->name('home');
 //Anuncios relacionados con categorias
 Route::get('/category/{id}/announcements', [PublicController::class, "AnnouncementsByCategory"])->name('category.announcements');
+
+// User profile 
+Route::get("/user", [ProfileController::class, "index"])->name("user.home");
 
 //Ruta de usuario revisor
 Route::get('/revisor',[RevisorController::class,"index"])->name("revisor.home");

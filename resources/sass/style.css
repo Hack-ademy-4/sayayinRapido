@@ -75,3 +75,32 @@ a.footer_color:hover {
 	text-decoration: none;
 	color: white;
 }
+
+
+/* ---------------------- navbar ------------------------------------*/
+@media (max-width: 991.98px) {
+  #navbarResponsive.show > ul {
+    display: block;
+    position: absolute;
+    top: 106px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 99;
+    height: 400px;
+    background: linear-gradient(228deg, rgba(140,84,180,1) 38%, rgba(111,152,212,1) 100%);
+    padding: 10px;
+  }
+	.nav-logo{
+		margin-top: -23px;
+	}
+
+	#mainNav .navbar-toggler{
+		margin-top: -10px;
+	}
+}

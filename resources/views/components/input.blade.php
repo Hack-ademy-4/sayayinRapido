@@ -11,7 +11,7 @@
 	@if ($type === "textarea")
 	<textarea {{ $attributes->merge(["class" =>"form-control"]) }} placeholder="{{$placeholder}}" id="{{$id}}" style="height: 100px" name="{{$name}}" required>{{$value}}</textarea>
 	@elseif ($type === "select")
-	<select class="form-select" id="{{$id}}" name="{{$name}}" required>
+	<select {{ $attributes->merge(["class" =>"form-select"]) }} id="{{$id}}" name="{{$name}}" required>
 		<option @if (!$value) selected @endif value="">{{$placeholder}}</option>
 		@foreach($items ?? collect([]) as $item)
 		<option value="{{$item->id}}" @if ($value == $item->id) selected @endif>{{$item->name}}
