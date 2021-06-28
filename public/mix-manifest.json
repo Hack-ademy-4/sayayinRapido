@@ -1,7 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
     "/img/logorapido2.png": "/img/logorapido2.png",
     "/img/logorapido4.png": "/img/logorapido4.png",
-    "/img/logorapido5.png": "/img/logorapido5.png"
+    "/img/logorapido5.png": "/img/logorapido5.png",
+    "/css/app.css": "/css/app.css"
 }
