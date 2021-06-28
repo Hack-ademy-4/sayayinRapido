@@ -6,38 +6,20 @@
 @endif
 <!--h1>Anuncios por categoria: {{--$category->name--}}</h1-->
 
-@foreach($announcements as $announcement)
-<div class="row formulario my-5">
-    <div class="col-12 col-md-8 offset-md-2">
-        <div class="card card border-0 shadow" style="width: 30rem;">
-            <div class="card-header">
-                {{$announcement->title}}
-            </div>
-            <p>
-                {{$announcement->price}}
-            </p>
-            <!-- <div class="mb-5">
-                <a href="{{route('announcements.show', $announcement)}}">Leer más</a>
-            </div> -->
-            <div class="car-body d-flex">
-                <img src="https://picsum.photos/200/300" alt="">
-                <p>
-                    {{$announcement->body}}
-                </p>
-            </div>
-            <div class="card-footer d-flex justify-content-between">
-                <strong>Categoria <a href="#">{{$announcement->category->name}}</a></strong>
-                <i>{{$announcement->created_at-> format('d/m/Y')}}-{{$announcement->user->name}}</i>
-            </div>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+  @foreach($announcements as $announcement)
+    <div class="col-md-6 col-lg-4 col-xl-3 my-5">
+    <x-card-ad :ad=$announcement edit/>
     </div>
+  @endforeach
+  </div>
+  </div>
 </div>
-@endforeach
-
 <!-- <div class="row my-3">
-    <div class="col-12 col-md-8 offset-md-2">
-        {{ $announcements->links() }}
-    </div>
+  <div class="col-12 col-md-8 offset-md-2">
+    {{ $announcements->links() }}
+  </div>
 </div>
  -->
 @endsection
