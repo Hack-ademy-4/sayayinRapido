@@ -27,11 +27,11 @@
 </div>
 <!--Cards de chollos-->
 <div class="row my-5 justify-content-center align-items-center gx-0">
-  <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-mobile-alt fa-2x icono"></i></a></div>
   <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-car fa-2x icono"></i></a></div>
-  <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-home fa-2x icono"></i></a></div>
   <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-couch fa-2x icono"></i></a></div>
   <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-book-open fa-2x icono"></i></a></div>
+  <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-mobile-alt fa-2x icono"></i></a></div>
+  <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-home fa-2x icono"></i></a></div>
   <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-tv fa-2x icono"></i></a></div>
 </div>
 <div class="row cartas gx-0">
