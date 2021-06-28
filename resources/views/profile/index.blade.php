@@ -16,8 +16,8 @@
 			</form>
 		</div>
 	</section>
-  <div class="d-flex justify-content-evenly">
-    <a href="{{route('announcements.create')}}" class="btn btn-primary">{{__("Nuevo Anuncio")}}</a>
+  <div class="d-flex justify-content-evenly my-5">
+    <a href="{{route('announcements.create')}}" class="btn btn-primary boton-Micuenta">{{__("Nuevo Anuncio")}}</a>
     <a href="{{route('announcements.index')}}" class="btn btn-primary">{{__("Mis anuncios")}}</a>
   </div>
 </div>

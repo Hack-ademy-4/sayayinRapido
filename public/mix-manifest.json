@@ -1,9 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/img/logorapido.png": "/img/logorapido.png",
+    "/img/car.jpg": "/img/car.jpg",
+    "/img/kitchen.jpg": "/img/kitchen.jpg",
     "/img/logorapido2.png": "/img/logorapido2.png",
-    "/img/logorapido3.png": "/img/logorapido3.png",
     "/img/logorapido4.png": "/img/logorapido4.png",
-    "/img/logorapido5.png": "/img/logorapido5.png"
+    "/img/logorapido5.png": "/img/logorapido5.png",
+    "/img/room.jpg": "/img/room.jpg"
 }

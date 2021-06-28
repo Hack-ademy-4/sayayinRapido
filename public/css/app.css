@@ -63,6 +63,10 @@ a.footer_color:hover {
 	background-color:#7329a8;
 }
 
+.boton-Micuenta{
+	color:rgb(111,152,212,1);
+}
+
 .form_login{
 	padding-bottom: 3rem;
 }
@@ -105,12 +109,17 @@ box-shadow:0px 0px 5px black;
     background: linear-gradient(228deg, rgba(140,84,180,1) 38%, rgba(111,152,212,1) 100%);
     padding: 10px;
   }
+
+	#mainNav {
+		height: 100px;
+	}
+
 	.nav-logo{
-		margin-top: -23px;
+		margin-top: -40px;
 	}
 
 	#mainNav .navbar-toggler{
-		margin-top: -10px;
+		margin-top: -27px;
 	}
 }
 .form-control.is-invalid, .was-validated .form-control:invalid {
