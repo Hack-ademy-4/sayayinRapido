@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="col-12 col-md-4">
-      <h2>{{$announcement->title}}</h2>
+      <h2 class="text-uppercase">{{$announcement->title}}</h2>
       <p>{{$announcement->price}} €</p>
       <p>{{$announcement->body}}</p>
     </div>
