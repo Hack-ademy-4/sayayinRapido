@@ -2,9 +2,17 @@
 @section('content')
 <!--Aqui empezamos con principal-->
 <div class="container-fluid">
-  <h1 class="text-center title_under_navBar my-5">Bienvenido a Rapido.es</h1>
-  <p class="text-muted text-center formulario">Un equipo de personas que aspiran a hacer un mundo colaborativo y más
-    sostenible.</p>
+  <div class="row">
+    <div> <div class="input-group my-4">
+        <div class="form-outline">
+          <input type="search" id="form1" class="form-control" />
+          <label class="form-label" for="form1">Search</label>
+        </div>
+        <button type="button botao" class="btn btn-primary"><i class="fas fa-search"></i></button>
+      </div></div>
+  <h1 class="text-center title_under_navBar my-3">Bienvenido a Rapido.es</h1>
+  <p class="text-muted text-center formulario">Un equipo de personas que aspiran a hacer un mundo colaborativo y más sostenible.</p>
+  </div>
   <div class="row my-5">
     <div class="col-12">
       <!--iconos-->
@@ -20,13 +28,7 @@
           <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-couch fa-2x icono"></i></a></div>
         </div>
       </div>
-      <!--<div class="input-group my-5">
-        <div class="form-outline">
-          <input type="search" id="form1" class="form-control" />
-          <label class="form-label" for="form1">Search</label>
-        </div>
-        <button type="button botao" class="btn btn-primary"><i class="fas fa-search"></i></button>
-      </div> -->
+      
     </div>
   </div>
 </div>
@@ -72,8 +74,6 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-
   @if(session('access.denied.revisor.only'))
   <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
   @endif
