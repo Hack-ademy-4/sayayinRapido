@@ -38,8 +38,9 @@ Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('local
 
 // -- Anuncios Por usuario --
 //Crear Anuncios
-Route::get('/new/announcements', [AnnounceController::class, "create"])->name('announcements.create')->middleware("auth");
-Route::post('/new/announcements', [AnnounceController::class, "store"])->middleware("auth");
+Route::get('/new/announcement', [AnnounceController::class, "create"])->name('announcements.create')->middleware("auth");
+Route::post('/new/announcement', [AnnounceController::class, "store"])->middleware("auth");
+Route::post('/new/images', [AnnounceController::class, "uploadImages"])->middleware("auth");
 //Leer Anuncios (El usuario lee los suyos)
 Route::get('/announcements', [AnnounceController::class,"index"])->name("announcements.index");
 Route::get('/announcements/{announcement}', [AnnounceController::class,"show"])->name("announcements.show");

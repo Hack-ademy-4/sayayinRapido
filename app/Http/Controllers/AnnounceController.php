@@ -26,15 +26,30 @@ class AnnounceController extends Controller
     }
 
     public function create(){
-        return view("announcements.create");
+        $user_token = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+        return view("announcements.create", compact("user_token"));
     }
 
     public function store(AnnouncementRequest $request){
         //dd($request);
         $data = $request->validated();
+        $user_token = $request->input("user_token");
+        dd($user_token);
         $announce = Auth::user()->announcements()->create($data);
 
         return redirect()->route("home")->with("msg", "Anuncio subido con éxito a la web");
+    }
+
+    public function uploadImages(Request $r) {
+        //dd($r->all());
+
+        $token = $r->input("user_token");
+        dd($token);
+        $fileName = $r->file('file')->store("public/temp/{$token}");
+        session()->push("images.{$token}", $fileName);
+        return response()->json(
+            session()->get("images.{$token}")
+        );
     }
 
     public function edit(Announcement $announcement){

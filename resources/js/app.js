@@ -21,3 +21,9 @@ window.addEventListener("load", () => {
 		});
 	}, 5000);
 });
+
+window.newAds = (token) => {
+	import("./newAd.js").then(({init}) => {
+		init(token);
+	});
+};
