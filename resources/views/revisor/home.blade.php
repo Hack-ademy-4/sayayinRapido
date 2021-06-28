@@ -60,6 +60,6 @@
   </div>
 </div>
 @else
-    <h3 class="text-center"> {{__('No hay anuncios para revisar')}} </h3>
+    <h3 class="text-center title_under_navBar my-4"> {{__('No hay anuncios para revisar')}} </h3>
 @endif
 @endsection
