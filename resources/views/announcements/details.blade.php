@@ -47,8 +47,13 @@
       <h2 class="text-uppercase">{{$announcement->title}}</h2>
       <p>{{$announcement->price}} €</p>
       <p>{{$announcement->body}}</p>
+      <div class="d-flex justify-content-between">
+        <a href="#" class="btn btn-primary">{{__("Añadir al carrito")}}</a>
+        <a href="#" class="btn btn-primary">{{__("Contactar con el vendedor")}}</a>
+      </div>
     </div>
   </div>
+  
 </div>
 @endsection
 
