@@ -1,5 +1,15 @@
 @extends('layouts.app')
 @section('content')
+@if(session('access.denied.revisor.only'))
+  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+  @endif
+
+  @if(session('msg'))
+  <div class="alert alert-success">{{session('msg')}}</div>
+  @endif
+  @if(session('access.denied.revisor.only'))
+  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+  @endif
 <!--Aqui empezamos con principal-->
 <div class="container-fluid">
   <div class="row">
@@ -74,16 +84,7 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  @if(session('access.denied.revisor.only'))
-  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
-  @endif
-
-  @if(session('msg'))
-  <div class="alert alert-success">{{session('msg')}}</div>
-  @endif
-  @if(session('access.denied.revisor.only'))
-  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
-  @endif
+ 
   @if (session('secondTitle'))
   <h2 class="my-5 text-center title_under_navBar">{{__('ui.secondTitle', ['category' => session('secondTitle')])}}</h2>
   @else
