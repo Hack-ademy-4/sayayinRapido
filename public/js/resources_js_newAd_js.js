@@ -14,6 +14,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.js */ "./resources/js/app.js");
 /* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 /* harmony import */ var dropzone__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dropzone__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 (dropzone__WEBPACK_IMPORTED_MODULE_1___default().autoDiscover) = false;
@@ -24,6 +27,51 @@ function init(token) {
     params: {
       _token: token,
       user_token: user_token
+    },
+    addRemoveLinks: true,
+    init: onInit
+  });
+  myDropzone.on("success", onUpload);
+  myDropzone.on("removedfile", onDelete);
+}
+
+function onInit() {
+  var _this = this;
+
+  var user_token = (0,_app_js__WEBPACK_IMPORTED_MODULE_0__.$)("input[name='user_token'").value;
+  axios__WEBPACK_IMPORTED_MODULE_2___default().get("/view/images?".concat(user_token)).then(function (_ref) {
+    var data = _ref.data;
+    console.log(data);
+    data.forEach(function (image) {
+      var file = {
+        serverId: image.id,
+        name: image.name,
+        size: image.size
+      };
+
+      _this.options.addedfile.call(_this, file);
+
+      _this.options.thumbnail.call(_this, file, image.src);
+
+      _this.options.success.call(_this, file);
+
+      _this.options.complete.call(_this, file);
+    });
+  });
+}
+
+function onUpload(file, r) {
+  file.serverId = r.id;
+}
+
+function onDelete(file) {
+  var user_token = (0,_app_js__WEBPACK_IMPORTED_MODULE_0__.$)("input[name='user_token'").value;
+  axios__WEBPACK_IMPORTED_MODULE_2___default()({
+    method: 'delete',
+    url: '/remove/images',
+    data: {
+      user_token: user_token,
+      id: file.serverId
     }
   });
 }

@@ -5,77 +5,131 @@ namespace App\Http\Controllers;
 use App\Models\Announcement;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\AnnouncementImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AnnouncementRequest;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+
 use Session;
 
 class AnnounceController extends Controller
 {
+  
+  public function index(){
+
+    $announcements = Auth::user()->Announcements()->paginate(10);
+
+    return view("announcements.index",compact('announcements'));
+  }
+
+  public function show(Announcement $announcement){
+    return view("announcements.details", compact("announcement"));
+  }
+
+  public function create(Request $r){
+    $user_token = $r->old("user_token", base_convert(sha1(uniqid(mt_rand())), 16, 36));
+    return view("announcements.create", compact("user_token"));
+  }
+
+  public function store(AnnouncementRequest $request){
+    //dd($request);
+    $data = $request->validated();
+    $user_token = $request->input("user_token");
     
-    public function index(){
+    $announce = Auth::user()->announcements()->create($data);
 
-        $announcements = Auth::user()->Announcements()->paginate(10);
+    // Guardamos imagenes
+    $images = session()->get("images.{$user_token}", []);
+    $removedImages = session()->get("removedImages.{$user_token}", []);
+    $images = array_diff($images, $removedImages);
 
-        return view("announcements.index",compact('announcements'));
+    foreach($images as $image)
+    {
+      $i = new AnnouncementImage;
+      $fileName = basename($image);
+      $newFilePath = "public/announcements/{$announce->id}/{$fileName}";
+      Storage::move($image, $newFilePath);
+      $i->file = $newFilePath;
+      $i->announcement_id = $announce->id;
+      $i->save();
+    }
+    File::deleteDirectory(storage_path("/app/public/temp/{$user_token}"));
+
+    return redirect()->route("home")->with("msg", "Anuncio subido con éxito a la web");
+  }
+
+  public function uploadImages(Request $r) {
+    //dd($r->all());
+
+    $token = $r->input("user_token");
+    //dd($token);
+    $fileName = $r->file('file')->store("public/temp/{$token}");
+    session()->push("images.{$token}", $fileName);
+    return response()->json([
+      "id" => $fileName,
+      "name" => $r->file('file')->getClientOriginalName()
+    ]);
+  }
+
+  public function removeImages(Request $r) {
+    try {
+      $user_token = $r->input("user_token");
+      $fileName = $r->input("id");
+      session()->push("removedImages.{$user_token}", $fileName);
+      Storage::delete($fileName);
+      return response()->json(["error" => false]);
+    } catch (Exception $e) {
+      return response()->json(["error" => $e->getMessage()]);
+    }
+  }
+
+  public function getImages(Request $r) {
+    $user_token = array_keys($r->query())[0];
+    $images = session()->get("images.{$user_token}", []);
+    //dd($user_token);
+    $removedImages = session()->get("removedImages.{$user_token}", []);
+    $images = array_diff($images, $removedImages);
+    $data = [];
+
+    foreach($images as $i) {
+      $data[] = [
+        "id" => $i,
+        "src" => Storage::url($i),
+        "size" => Storage::size($i),
+        "name" => basename($i)
+      ];
     }
 
-    public function show(Announcement $announcement){
-        return view("announcements.details", compact("announcement"));
-    }
+    return response()->json($data);
+  }
 
-    public function create(){
-        $user_token = base_convert(sha1(uniqid(mt_rand())), 16, 36);
-        return view("announcements.create", compact("user_token"));
-    }
+  public function edit(Announcement $announcement){
+    Session::now('edit',$announcement);
+    Session::now('_old_input.title', session('_old_input.title', $announcement->title));
+    Session::now('_old_input.body', session('_old_input.body', $announcement->body));
+    Session::now('_old_input.price', session('_old_input.price', $announcement->price));
+    Session::now('_old_input.category_id', session('_old_input.category_id', $announcement->category_id));
 
-    public function store(AnnouncementRequest $request){
-        //dd($request);
-        $data = $request->validated();
-        $user_token = $request->input("user_token");
-        dd($user_token);
-        $announce = Auth::user()->announcements()->create($data);
+    return view("announcements.create");
 
-        return redirect()->route("home")->with("msg", "Anuncio subido con éxito a la web");
-    }
+  }
 
-    public function uploadImages(Request $r) {
-        //dd($r->all());
+  public function update($id, AnnouncementRequest $request){
 
-        $token = $r->input("user_token");
-        //dd($token);
-        $fileName = $r->file('file')->store("public/temp/{$token}");
-        session()->push("images.{$token}", $fileName);
-        return response()->json(
-            session()->get("images.{$token}")
-        );
-    }
+    $announce = Auth::user()->announcements()->findOrFail($id);
 
-    public function edit(Announcement $announcement){
-        Session::now('edit',$announcement);
-        Session::now('_old_input.title', session('_old_input.title', $announcement->title));
-        Session::now('_old_input.body', session('_old_input.body', $announcement->body));
-        Session::now('_old_input.price', session('_old_input.price', $announcement->price));
-        Session::now('_old_input.category_id', session('_old_input.category_id', $announcement->category_id));
+    return redirect()->route("announcements.index")->with("msg","Anuncio actualizado con éxito en la web");
+    
+  }
 
-        return view("announcements.create");
+  public function destroy(Announcement $announce){
 
-    }
+    Auth::user()->announcement()->findOrFail($announce->id)->delete();
 
-    public function update($id, AnnouncementRequest $request){
+    return redirect()->route("announcements.index")->with("msg","Anuncio eliminado con éxito");
 
-        $announce = Auth::user()->announcements()->findOrFail($id);
-
-        return redirect()->route("announcements.index")->with("msg","Anuncio actualizado con éxito en la web");
-        
-    }
-
-    public function destroy(Announcement $announce){
-
-        Auth::user()->announcement()->findOrFail($announce->id)->delete();
-
-        return redirect()->route("announcements.index")->with("msg","Anuncio eliminado con éxito");
-
-    }
+  }
 }

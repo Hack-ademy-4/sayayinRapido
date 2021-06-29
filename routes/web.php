@@ -41,6 +41,8 @@ Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('local
 Route::get('/new/announcement', [AnnounceController::class, "create"])->name('announcements.create')->middleware("auth");
 Route::post('/new/announcement', [AnnounceController::class, "store"])->middleware("auth");
 Route::post('/new/images', [AnnounceController::class, "uploadImages"])->middleware("auth");
+Route::delete('/remove/images', [AnnounceController::class, "removeImages"]);
+Route::get('/view/images', [AnnounceController::class, "getImages"]);
 //Leer Anuncios (El usuario lee los suyos)
 Route::get('/announcements', [AnnounceController::class,"index"])->name("announcements.index");
 Route::get('/announcements/{announcement}', [AnnounceController::class,"show"])->name("announcements.show");
