@@ -29,6 +29,8 @@
 @push('scripts')
 	<script>
 		(function () {
+			// Inicializamos el dropZone y en vez de pasarle el parametro por meta, se lo pasamos como argumento
+			// window.newAds carga el public/js/****newAd.js y lo lanza, utilizando "chunks" de webpack para no crear un js demasiado grande.
 			newAds("{{csrf_token()}}");
 		})();
 	</script>

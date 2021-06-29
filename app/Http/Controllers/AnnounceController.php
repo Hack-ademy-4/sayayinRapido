@@ -44,7 +44,7 @@ class AnnounceController extends Controller
         //dd($r->all());
 
         $token = $r->input("user_token");
-        dd($token);
+        //dd($token);
         $fileName = $r->file('file')->store("public/temp/{$token}");
         session()->push("images.{$token}", $fileName);
         return response()->json(
