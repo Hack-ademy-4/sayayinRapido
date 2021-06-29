@@ -26,6 +26,10 @@ class Announcement extends Model
         return $this->hasMany(AnnouncementImage::class);
     }
 
+    public function firstImg() {
+        return $this->images->first()["file"] ?? '';
+    }
+
     static public function ToBeRevisionedCount(){
 
         return Announcement::where('is_accepted',null)->count();

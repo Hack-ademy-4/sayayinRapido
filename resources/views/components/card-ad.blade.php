@@ -1,9 +1,10 @@
 @php
 	$edit = $edit ?? false;
+	$imgUrl = $ad->firstImg() ? Storage::url($ad->firstImg()) : "https://designshack.net/wp-content/uploads/placeholder-image.png";
 @endphp
 <div {{ $attributes->merge(["class" =>"card"]) }}>
 	<div class="bg-image hover-overlay ripple " data-mdb-ripple-color="light">
-		<img src="https://images.unsplash.com/photo-1590615370581-265ae19a053b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bG9hZGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="img-fluid" />
+		<img src="{{$imgUrl}}" class="img-fluid" />
 		<a href="{{route('announcements.show', $ad)}}">
 			<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
 		</a>
