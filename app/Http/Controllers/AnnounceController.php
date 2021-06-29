@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announcement;
+use Session;
 use App\Models\User;
 use App\Models\Category;
-use App\Models\AnnouncementImage;
+use App\Jobs\ResizeImage;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\AnnouncementImage;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\AnnouncementRequest;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\View;
 
-use Session;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\AnnouncementRequest;
 
 class AnnounceController extends Controller
 {
@@ -52,6 +53,9 @@ class AnnounceController extends Controller
       $fileName = basename($image);
       $newFilePath = "public/announcements/{$announce->id}/{$fileName}";
       Storage::move($image, $newFilePath);
+
+      dispatch(new ResizeImage($newFilePath,300,150));
+
       $i->file = $newFilePath;
       $i->announcement_id = $announce->id;
       $i->save();
@@ -66,10 +70,10 @@ class AnnounceController extends Controller
 
     $token = $r->input("user_token");
     //dd($token);
-    $fileName = $r->file('file')->store("public/temp/{$token}");
-    session()->push("images.{$token}", $fileName);
+    $filePath = $r->file('file')->store("public/temp/{$token}");
+    session()->push("images.{$token}", $filePath);
     return response()->json([
-      "id" => $fileName,
+      "id" => $filePath,
       "name" => $r->file('file')->getClientOriginalName()
     ]);
   }
@@ -97,7 +101,7 @@ class AnnounceController extends Controller
     foreach($images as $i) {
       $data[] = [
         "id" => $i,
-        "src" => Storage::url($i),
+        "src" => AnnouncementImage::getUrlByFilePath($image,120,120),
         "size" => Storage::size($i),
         "name" => basename($i)
       ];
