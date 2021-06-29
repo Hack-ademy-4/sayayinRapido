@@ -53,21 +53,31 @@
         <!--parte de detalles -->
         <div class="col-12 col-md-4 titulo2 card-detalles ">
             <h2 class="text-uppercase my-4">{{$announcement->title}}</h2>
+            <div class="ratings"> <span class="product-rating">4.6</span><span>/5</span>
+                <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                <div class="rating-text"> <span>46 ratings & 15 reviews</span> </div>
+            </div>
             <p class="my-3">Categoria: <a href="#">{{$announcement->category->name}}</a></p>
             <p>Precio: {{$announcement->price}} €</p>
             <p>Descripción: {{$announcement->body}}</p>
             <hr>
             <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Comprar ya</button>
-                <button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i> &nbsp{{__("Añadir a la cesta")}}</button>
-            </div> 
-            <div class="my-5">           
+                <button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>
+                    &nbsp{{__("Añadir a la cesta")}}</button>
+            </div>
+            <div class="my-5">
                 <!--<a href="#" class="btn btn-primary">{{__("Añadir a la cesta")}}</a>-->
                 <a href="#" class="btn btn-light btn-md mr-1 mb-2">{{__("Contactar con el vendedor")}}</a>
             </div>
-        </div>    
+        </div>
     </div>
+    <div class="row">
+        <div class="col-8 text-center">
 
+        </div>
+
+    </div>
 </div>
 @endsection
 

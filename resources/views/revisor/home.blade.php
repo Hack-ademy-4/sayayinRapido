@@ -61,6 +61,6 @@
 </div>
 @else
     <h3 class="text-center title_under_navBar my-4"> {{__('No hay anuncios para revisar')}} </h3>
-    <a href="">Inicio</a>
+    <p class="text-center my-5"><a href="{{route('home')}}">Inicio</a></p>
 @endif
 @endsection
