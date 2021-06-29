@@ -15,8 +15,13 @@
 				<x-input placeholder="{{__('Precio')}}" name="price" type="number" label="{{__('Precio')}}"/>
 				<x-input placeholder="{{__('Seleciona una categoria')}}" name="category_id" label="{{__('Categoria')}}" :items=$categories type="select"/>
 			</div>
-			<div class="mb-4">
-				<div class="dropzone" id="drop"></div>
+			
+			<div class="mb-3">
+				<label for="announcementImages" class="form-label">Imagenes</label>
+				<div class="dropzone" id="drophere"></div>
+				@error('images')
+					<small class="alert alert-danger">{{ $message }}</small>
+				@enderror
 			</div>
 			<input type="hidden" name="user_token" value="{{$user_token}}">
 			<button type="submit" class="btn btn-primary botoncitos">{{__('Publicar')}}</button>
