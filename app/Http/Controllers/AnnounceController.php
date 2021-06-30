@@ -41,11 +41,15 @@ class AnnounceController extends Controller
     $user_token = $request->input("user_token");
     
     $announce = Auth::user()->announcements()->create($data);
+    
 
     // Guardamos imagenes
+    
+
     $images = session()->get("images.{$user_token}", []);
     $removedImages = session()->get("removedImages.{$user_token}", []);
     $images = array_diff($images, $removedImages);
+
 
     foreach($images as $image)
     {
@@ -53,7 +57,7 @@ class AnnounceController extends Controller
       $fileName = basename($image);
       $newFilePath = "public/announcements/{$announce->id}/{$fileName}";
       Storage::move($image, $newFilePath);
-
+      
       dispatch(new ResizeImage($newFilePath,300,150));
 
       $i->file = $newFilePath;

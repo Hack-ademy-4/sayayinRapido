@@ -39,6 +39,16 @@
                           {{$announcement->body}}
                       </div>
                   </div>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <h3>Imagenes</h3>
+                      </div>
+                      @foreach($announcement->images as $image)
+                      <div class="col-md-9">
+                          <img src="{{$image->getUrl(300,150)}}" alt="" class="img-fluid">
+                      </div>
+                      @endforeach
+                  </div>
                   <hr>
               </div>
           </div>
