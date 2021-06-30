@@ -39,6 +39,7 @@
                           {{$announcement->body}}
                       </div>
                   </div>
+                  <hr>
                   <div class="row">
                       <div class="col-md-3">
                           <h3>Imagenes</h3>
