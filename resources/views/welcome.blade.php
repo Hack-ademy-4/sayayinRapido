@@ -1,5 +1,15 @@
 @extends('layouts.app')
 @section('content')
+@if(session('access.denied.revisor.only'))
+  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+  @endif
+
+  @if(session('msg'))
+  <div class="alert alert-success">{{session('msg')}}</div>
+  @endif
+  @if(session('access.denied.revisor.only'))
+  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+  @endif
 <!--Aqui empezamos con principal-->
 <div class="container-fluid">
   @if(session('access.denied.revisor.only'))
@@ -89,14 +99,19 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-</div> <!-- end carrousel -->
-  
-{{-- Los anuncios --}}
-<div class="container-fluid my-5">
-  <div class="row">
-    @foreach($announcements as $announcement)
-    <div class="col-md-6 col-lg-4 col-xl-3 my-3">
-      <x-card-ad :ad=$announcement />
+ 
+  @if (session('secondTitle'))
+  <h2 class="my-5 text-center title_under_navBar">{{__('ui.secondTitle', ['category' => session('secondTitle')])}}</h2>
+  @else
+  <h2 class="my-5 text-center title_under_navBar">{{__('ui.welcome')}}</h2>
+  @endif
+  <div class="container-fluid">
+    <div class="row">
+      @foreach($announcements as $announcement)
+      <div class="col-md-6 col-lg-4 col-xl-3 my-3">
+        <x-card-ad :ad=$announcement />
+      </div>
+      @endforeach
     </div>
     @endforeach
   </div>

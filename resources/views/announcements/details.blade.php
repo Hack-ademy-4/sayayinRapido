@@ -1,257 +1,94 @@
 @extends('layouts.app')
 @section('content')
 <div class="container my-4">
-  <div class="row">
-  <h2 class="text-center title_under_navBar my-4">{{__('Detalles del producto')}}</h2>
 
-  <!--Aqui empieza el detalle
-<div class="col-sm-12 col-md-12 col-lg-12">
-    <!-- product -->
-    <div class="product-content product-wrap clearfix product-deatil">
-        <div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12">
-                <div class="product-image">
-                    <div id="myCarousel-2" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel-2" data-slide-to="0" class=""></li>
-                            <li data-target="#myCarousel-2" data-slide-to="1" class="active"></li>
-                            <li data-target="#myCarousel-2" data-slide-to="2" class=""></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <!-- Slide 1 -->
-                            <div class="item active">
-                                <img src="https://via.placeholder.com/700x400/FFB6C1/000000" class="img-responsive" alt="" />
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="item">
-                                <img src="https://via.placeholder.com/700x400/87CEFA/000000" class="img-responsive" alt="" />
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="item">
-                                <img src="https://via.placeholder.com/700x400/B0C4DE/000000" class="img-responsive" alt="" />
-                            </div>
+    <h2 class="text-center title_under_navBar my-4">{{__('Detalles del producto')}}</h2>
+    <div class="row formulario">
+        <!--Aqui empieza el detalle-->
+        <div class="col-12 col-md-6">
+            <div id="carrusell-detail" class="carousel cards-detalles carousel-light slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="0" class=""
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="2000">
+                        <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
                         </div>
-                        <a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
-                        <a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrusell-detail"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrusell-detail"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-
-            <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
-                <h2 class="name">
-                    Product Name Title Here
-                    <small>Product by <a href="javascript:void(0);">Adeline</a></small>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-muted"></i>
-                    <span class="fa fa-2x"><h5>(109) Votes</h5></span>
-                    <a href="javascript:void(0);">109 customer reviews</a>
-                </h2>
-                <hr />
-                <h3 class="price-container">
-                    $129.54
-                    <small>*includes tax</small>
-                </h3>
-                <div class="certified">
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0);">Delivery time<span>7 Working Days</span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">Certified<span>Quality Assured</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <hr />
-                <div class="description description-tabs">
-                    <ul id="myTab" class="nav nav-pills">
-                        <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">Product Description </a></li>
-                        <li class=""><a href="#specifications" data-toggle="tab">Specifications</a></li>
-                        <li class=""><a href="#reviews" data-toggle="tab">Reviews</a></li>
-                    </ul>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade active in" id="more-information">
-                            <br />
-                            <strong>Description Title</strong>
-                            <p>
-                                Integer egestas, orci id condimentum eleifend, nibh nisi pulvinar eros, vitae ornare massa neque ut orci. Nam aliquet lectus sed odio eleifend, at iaculis dolor egestas. Nunc elementum pellentesque augue
-                                sodales porta. Etiam aliquet rutrum turpis, feugiat sodales ipsum consectetur nec.
-                            </p>
-                        </div>
-                        <div class="tab-pane fade" id="specifications">
-                            <br />
-                            <dl class="">
-                                <dt>Gravina</dt>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dd>Eget lacinia odio sem nec elit.</dd>
-                                <br />
-
-                                <dt>Test lists</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <br />
-
-                                <dt>Altra porta</dt>
-                                <dd>Vestibulum id ligula porta felis euismod semper</dd>
-                            </dl>
-                        </div>
-                        <div class="tab-pane fade" id="reviews">
-                            <br />
-                            <form method="post" class="well padding-bottom-10" onsubmit="return false;">
-                                <textarea rows="2" class="form-control" placeholder="Write a review"></textarea>
-                                <div class="margin-top-10">
-                                    <button type="submit" class="btn btn-sm btn-primary pull-right">
-                                        Submit Review
-                                    </button>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Location"><i class="fa fa-location-arrow"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Voice"><i class="fa fa-microphone"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Photo"><i class="fa fa-camera"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add File"><i class="fa fa-file"></i></a>
-                                </div>
-                            </form>
-
-                            <div class="chat-body no-padding profile-message">
-                                <ul>
-                                    <li class="message">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="online" />
-                                        <span class="message-text">
-                                            <a href="javascript:void(0);" class="username">
-                                                Alisha Molly
-                                                <span class="badge">Purchase Verified</span>
-                                                <span class="pull-right">
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-muted"></i>
-                                                </span>
-                                            </a>
-                                            Can't divide were divide fish forth fish to. Was can't form the, living life grass darkness very image let unto fowl isn't in blessed fill life yielding above all moved
-                                        </span>
-                                        <ul class="list-inline font-xs">
-                                            <li>
-                                                <a href="javascript:void(0);" class="text-info"><i class="fa fa-thumbs-up"></i> This was helpful (22)</a>
-                                            </li>
-                                            <li class="pull-right">
-                                                <small class="text-muted pull-right ultra-light"> Posted 1 year ago </small>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="message">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="online" />
-                                        <span class="message-text">
-                                            <a href="javascript:void(0);" class="username">
-                                                Aragon Zarko
-                                                <span class="badge">Purchase Verified</span>
-                                                <span class="pull-right">
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                </span>
-                                            </a>
-                                            Excellent product, love it!
-                                        </span>
-                                        <ul class="list-inline font-xs">
-                                            <li>
-                                                <a href="javascript:void(0);" class="text-info"><i class="fa fa-thumbs-up"></i> This was helpful (22)</a>
-                                            </li>
-                                            <li class="pull-right">
-                                                <small class="text-muted pull-right ultra-light"> Posted 1 year ago </small>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <a href="javascript:void(0);" class="btn btn-success btn-lg">Add to cart ($129.54)</a>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <div class="btn-group pull-right">
-                            <button class="btn btn-white btn-default"><i class="fa fa-star"></i> Add to wishlist</button>
-                            <button class="btn btn-white btn-default"><i class="fa fa-envelope"></i> Contact Seller</button>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <!--parte de detalles -->
+        <div class="col-12 col-md-4 titulo2 card-detalles ">
+            <h2 class="text-uppercase my-4">{{$announcement->title}}</h2>
+            <div class="ratings"> <span class="product-rating">4.6</span><span>/5</span>
+                <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                <div class="rating-text"> <span>46 ratings & 15 reviews</span> </div>
+            </div>
+            <p class="my-3">Categoria: <a href="#">{{$announcement->category->name}}</a></p>
+            <p>Precio: {{$announcement->price}} €</p>
+            <p>Descripción: {{$announcement->body}}</p>
+            <hr>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Comprar ya</button>
+                <button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>
+                    &nbsp{{__("Añadir a la cesta")}}</button>
+            </div>
+            <div class="my-5">
+                <!--<a href="#" class="btn btn-primary">{{__("Añadir a la cesta")}}</a>-->
+                <a href="#" class="btn btn-light btn-md mr-1 mb-2">{{__("Contactar con el vendedor")}}</a>
             </div>
         </div>
     </div>
-    <!-- end product -->
-</div>
+    <div class="row">
+        <div class="col-8 text-center">
 
-  -->
+        </div>
 
-  
-    <div class="col-12 col-md-6">
-      <div id="carrusell-detail" class="carousel cards-detalles carousel-light slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="2000">
-            <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="http://lorempixel.com/400/400/?q={{rand(1, 100)}}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carrusell-detail" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carrusell-detail" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
     </div>
-    <div class="col-12 col-md-4">
-      <h2 class="text-uppercase">{{$announcement->title}}</h2>
-      <p>{{$announcement->price}} €</p>
-      <p>{{$announcement->body}}</p>
-      <div class="d-flex justify-content-between">
-        <a href="#" class="btn btn-primary">{{__("Añadir al carrito")}}</a> 
-        <a href="#" class="btn btn-primary">{{__("Contactar con el vendedor")}}</a>
-      </div>
-    </div>
-  </div>
-  
 </div>
 @endsection
 
 @push('css')
 <style>
-  .carousel-control-next-icon::after {
-    content: "";
-  }
+    .carousel-control-next-icon::after {
+        content: "";
+    }
 
-  .carousel-control-prev-icon::after {
-      content: "";
-  }
+    .carousel-control-prev-icon::after {
+        content: "";
+    }
 </style>
 @endpush

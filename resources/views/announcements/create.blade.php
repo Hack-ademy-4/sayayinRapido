@@ -3,7 +3,7 @@
 <div class="container my-5 ">
 <section class="row formulario form_login my-5">
 	<div class="col-12 col-md-6 offset-md-3">
-		<h2 class="text-center title_under_navBar my-5">{{__('Añadir Nuevo Anúncio')}}</h2>
+		<h2 class="text-center title_under_navBar my-5">{{__('Añadir Nuevo Anuncio')}}</h2>
 		@if(Session::has("edit"))
 		<form action="{{route('announcements.edit', Session::get('edit'))}}" method="POST" class="@if($errors->any()) was-validated @endif" novalidate>
 		@endif
