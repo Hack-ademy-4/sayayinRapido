@@ -99,7 +99,9 @@ box-shadow:0px 0px 5px black;
 .color3{
 	color:#565959;
 }
-
+.supervisor{
+	text-decoration: none;
+}
 /* ---------------------- navbar ------------------------------------*/
 @media (max-width: 991.98px) {
   #navbarResponsive.show > ul {
