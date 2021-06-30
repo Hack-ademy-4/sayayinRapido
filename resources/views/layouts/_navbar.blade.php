@@ -53,13 +53,13 @@
                     </x-nav-item>
                     @endif
                     @else
-                    <!--@if (Auth::user()->is_revisor)
+                    @if (Auth::user()->is_revisor)
                     <x-nav-item 
                     route="revisor.home" 
                     badge="{{ \App\Models\Announcement::ToBeRevisionedCount() }}">
                         {{__("ui.revisor")}}
                     </x-nav-item>
-                    @endif-->
+                    @endif
                 @endguest
                 
             </ul>
