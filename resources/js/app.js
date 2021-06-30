@@ -1,3 +1,8 @@
+/*
+	ATENCION! No utilizamos jQuery porque no manipulamos demasiado el DOM y pq está obsoleto
+	En vez de jQuery tienes 3 funciones $, $$, $on para que ahorres escribir
+*/
+
 export const $ = el => document.querySelector(el);
 export const $$ = el => document.querySelectorAll(el);
 export const $on = (ev, el, callback, all = false) => {

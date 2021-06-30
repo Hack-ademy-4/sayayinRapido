@@ -112,14 +112,16 @@ class AnnounceController extends Controller
     return response()->json($data);
   }
 
-  public function edit(Announcement $announcement){
-    Session::now('edit',$announcement);
+  public function edit(Request $r, Announcement $announcement){
+    $user_token = $r->old("user_token", base_convert(sha1(uniqid(mt_rand())), 16, 36));
+
+    Session::now('edit', $announcement);
     Session::now('_old_input.title', session('_old_input.title', $announcement->title));
     Session::now('_old_input.body', session('_old_input.body', $announcement->body));
     Session::now('_old_input.price', session('_old_input.price', $announcement->price));
     Session::now('_old_input.category_id', session('_old_input.category_id', $announcement->category_id));
 
-    return view("announcements.create");
+    return view("announcements.create", compact("user_token"));
 
   }
 
