@@ -1,6 +1,8 @@
 @php
 	$edit = $edit ?? false;
-	$imgUrl = $ad->firstImg() ? Storage::url($ad->firstImg()) : "https://designshack.net/wp-content/uploads/placeholder-image.png";
+	//$imgUrl = $ad->firstImg() ? Storage::url($ad->firstImg()) : "https://designshack.net/wp-content/uploads/placeholder-image.png";
+	$numberOfImages = $ad->images->count();
+	$imgUrl = $ad->firstImg();
 @endphp
 <div {{ $attributes->merge(["class" =>"card"]) }}>
 	<div class="bg-image hover-overlay ripple " data-mdb-ripple-color="light">

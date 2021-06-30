@@ -16,7 +16,7 @@
 				<x-input placeholder="{{__('Seleciona una categoria')}}" name="category_id" label="{{__('Categoria')}}" :items=$categories type="select"/>
 			</div>
 			
-			<div class="mb-3">
+			<div class="mb-4">
 				<label for="announcementImages" class="form-label">Imagenes</label>
 				<div class="dropzone" id="drophere"></div>
 				@error('images')
@@ -36,7 +36,7 @@
 		(function () {
 			// Inicializamos el dropZone y en vez de pasarle el parametro por meta, se lo pasamos como argumento
 			// window.newAds carga el public/js/****newAd.js y lo lanza, utilizando "chunks" de webpack para no crear un js demasiado grande.
-			newAds("{{csrf_token()}}");
+			dropzone("{{csrf_token()}}");
 		})();
 	</script>
 @endpush

@@ -44,25 +44,23 @@ class AnnounceController extends Controller
     
 
     // Guardamos imagenes
-    
-
     $images = session()->get("images.{$user_token}", []);
     $removedImages = session()->get("removedImages.{$user_token}", []);
     $images = array_diff($images, $removedImages);
 
-
-    foreach($images as $image)
+    foreach($images as $i) // Aqui le llamamos $i en vez de $image, pq es mas corto...
     {
-      $i = new AnnouncementImage;
-      $fileName = basename($image);
-      $newFilePath = "public/announcements/{$announce->id}/{$fileName}";
-      Storage::move($image, $newFilePath);
-      
-      dispatch(new ResizeImage($newFilePath,300,150));
+      $amounceImg = new AnnouncementImage;
 
-      $i->file = $newFilePath;
-      $i->announcement_id = $announce->id;
-      $i->save();
+      $fileName = basename($i);
+      $newFilePath = "public/announcements/{$announce->id}/{$fileName}";
+      Storage::move($i, $newFilePath);
+      
+      dispatch(new ResizeImage($newFilePath, 300, 150)); // Aqui lanzamos el job con estos parametros
+
+      $amounceImg->file = $newFilePath;
+      $amounceImg->announcement_id = $announce->id;
+      $amounceImg->save();
     }
     File::deleteDirectory(storage_path("/app/public/temp/{$user_token}"));
 
@@ -70,11 +68,11 @@ class AnnounceController extends Controller
   }
 
   public function uploadImages(Request $r) {
-    //dd($r->all());
-
     $token = $r->input("user_token");
-    //dd($token);
     $filePath = $r->file('file')->store("public/temp/{$token}");
+
+    dispatch(new ResizeImage($filePath, 120, 120));
+
     session()->push("images.{$token}", $filePath);
     return response()->json([
       "id" => $filePath,
@@ -105,7 +103,7 @@ class AnnounceController extends Controller
     foreach($images as $i) {
       $data[] = [
         "id" => $i,
-        "src" => AnnouncementImage::getUrlByFilePath($image,120,120),
+        "src" => AnnouncementImage::getUrlByFilePath($i, 120, 120),
         "size" => Storage::size($i),
         "name" => basename($i)
       ];
