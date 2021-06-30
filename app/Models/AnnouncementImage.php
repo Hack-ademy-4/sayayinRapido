@@ -9,28 +9,28 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class AnnouncementImage extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    public function announcement() {
-        return $this->belongsTo(Announcement::class);
-    }
+  public function announcement() {
+    return $this->belongsTo(Announcement::class);
+  }
 
-    static public function getUrlByFilePath($filePath, $w = null, $h = null){
+  static public function getUrlByFilePath($filePath, $w = null, $h = null){
 
-        if(!$w && !$h)
-            return Storage::url($filePath);
+    if(!$w && !$h)
+      return Storage::url($filePath);
 
-            $path = dirname($filePath);
-            $fileName = basename($filePath);
+    $path = dirname($filePath);
+    $filename = basename($filePath);
 
-            $file = "{$path}/crop{$w}x{$h}_{$filename}";
-            
-            return Storage::url($file);
-        
-    }
+    $file = "{$path}/crop{$w}x{$h}_{$filename}";
+    
+    return Storage::url($file);
+    
+  }
 
-    public function getUrl($w,$h){
+  public function getUrl($w,$h){
 
-        return AnnouncementImage::getUrlByFilePath($this->file, $w, $h);
-    }
+    return AnnouncementImage::getUrlByFilePath($this->file, $w, $h);
+  }
 }

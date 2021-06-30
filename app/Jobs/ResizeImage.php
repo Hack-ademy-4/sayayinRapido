@@ -13,38 +13,38 @@ use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 class ResizeImage implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    private $path, $fileName, $w, $h;
+	use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+	private $path, $fileName, $w, $h;
 
-    /**
-     * Create a new job instance.
-     *
-     * @return void
-     */
-    public function __construct($filePath,$w,$h)
-    {
-        $this->path = dirname($filePath);
-        $this->fileName = basename($filePath);
-        $this->w = $w;
-        $this->h = $h;
-    }
+	/**
+	 * Create a new job instance.
+	 *
+	 * @return void
+	 */
+	public function __construct($filePath, $w, $h)
+	{
+		$this->path = dirname($filePath);
+		$this->fileName = basename($filePath);
+		$this->w = $w;
+		$this->h = $h;
+	}
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
-    public function handle()
-    {
-        $w = $this->w;
-        $h = $this->h;
+	/**
+	 * Execute the job.
+	 *
+	 * @return void
+	 */
+	public function handle()
+	{
+    $w = $this->w;
+    $h = $this->h;
 
-        $srcPath = storage_path() . '/app/' . $this->path . '/' . $this->fileName;
-        $desPath = storage_path() . '/app/' . $this->path . '/crop{$w}x{$h}_' . $this->fileName;
+		$srcPath = storage_path() . "/app/" . $this->path . "/" . $this->fileName;
+		$desPath = storage_path() . "/app/" . $this->path . "/crop{$w}x{$h}_" . $this->fileName;
 
-        Image::load($srcPath)
-            ->crop(Manipulations::CROP_CENTER,$w,$h)
-            ->save($desPath);
+		Image::load($srcPath)
+			->crop(Manipulations::CROP_CENTER, $w, $h)
+			->save($desPath);
 
-    }
+	}
 }
