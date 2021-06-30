@@ -1,4 +1,3 @@
-<!-- Navigation-->
 <nav class="navbar navbar-expand-lg py-0 px-2 border-bottom navegacion" id="mainNav">
     <div class="container-fluid">
         <a class="navbar-brand js-scroll-trigger text-white rapidoLogo" href="{{route('home')}}"> <img
@@ -53,34 +52,21 @@
                     </x-nav-item>
                     @endif
                     @else
-                    @if (Auth::user()->is_revisor)
+                     @if (Auth::user()->is_revisor)
                     <x-nav-item 
                     route="revisor.home" 
                     badge="{{ \App\Models\Announcement::ToBeRevisionedCount() }}">
                         {{__("ui.revisor")}}
                     </x-nav-item>
-                    @endif
+                    @endif 
                 @endguest
                 
             </ul>
+           
             <!--Div navbar-->
-            
             <div class="d-flex align-items-center navbar-nav">
-                @if (Auth::user()->is_revisor)
-                <!-- Notifications -->
-                <a class="text-reset supervisor me-3 hidden-arrow" 
-                    href="{{ route('revisor.home') }}" 
-                    id="navbarDropdownMenuLink"
-                    role="button" aria-expanded="false">
-                    {{__("ui.revisor")}}
-                    @if (\App\Models\Announcement::ToBeRevisionedCount() > 0)
-                        <span class="badge rounded-pill badge-notification bg-danger">
-                            {{ \App\Models\Announcement::ToBeRevisionedCount() }}
-                        </span>
-                    @endif
-                </a>
-                @endif
-
+                
+               
                 <!-- Avatar -->
                 <a class="dropdown-toggle me-3 d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
                     role="button" data-mdb-toggle="dropdown" aria-expanded="false">
@@ -99,10 +85,8 @@
                         </a>
                     </li>
                 </ul>
-
-                
                  <!-- Icon -->
-                 <a class="text-reset me-3" href="#">
+                <a class="text-reset me-3" href="#">
                     <i class="fas fa-cart-plus"></i>
                 </a>
                 <ul class="navbar-nav ms-auto">
@@ -110,7 +94,9 @@
                 <x-nav-item lang="it" />
                 <x-nav-item lang="en" nation="gb" />
                 </ul>
-            </div>            
+                  
+            </div>
+                    
         </div>
     </div>
 </nav>
