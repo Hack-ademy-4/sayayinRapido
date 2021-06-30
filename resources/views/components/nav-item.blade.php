@@ -1,8 +1,12 @@
-@php
-	$route = $route ?? "home";
-@endphp
+@props([
+	"route" => null,
+	"withLogout" => false,
+	"badge" => 0,
+	"lang" => null,
+	"nation" => null
+])
 <li {{ $attributes->merge(["class" => "nav-item mx-0 mx-lg-1 py-0 py-md-2"]) }}>
-	@if(isset($lang))
+	@if($lang)
 		<form action="{{route('locale',['locale'=>$lang])}}" method="POST">
 			@csrf
 			<button type="submit" class="nav-link" style="border:none;background-color:transparent">
@@ -10,12 +14,12 @@
 			</button>
 		</form>
 	@else
-		@if ($route === "logout")
+		@if ($route === "logout" || $withLogout)
 			<form id="logoutForm" action="{{route('logout')}}" method="POST">
 					@csrf
 			</form>
-			<a id="logoutBtn" class="nav-link text-white" href="#">
-		@else
+			@if ($route === "logout") <a id="logoutBtn" class="nav-link text-white" href="#"> @endif
+		@elseif($route)
 			<a class="nav-link text-white" href="{{ route($route) }}">
 		@endif
 				{{$slot}}
@@ -24,15 +28,17 @@
 					{{ $badge }}
 				</span>
 			@endif
-		</a>
+		@isset($route)
+			</a>
+		@endisset
 	@endif
 </li>
 
-@if($route === "logout")
+@if($route === "logout" || $withLogout)
 @push('scripts')
 	<script>
 		//script boton de logout
-		const logout = document.getElementById('logoutBtn');
+		const logout = document.getElementById('logoutBtn') || document.querySelector(".logoutBtn");
 		if (logout) {
 			logout.addEventListener('click', (e) => {
 				e.preventDefault();
