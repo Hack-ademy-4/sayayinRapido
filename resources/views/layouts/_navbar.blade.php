@@ -39,7 +39,7 @@
                  class= [string] - añade clase al <li>
                 --}}
                 <x-nav-item route="announcements.create">
-                    {{__('Nuevo Anuncio')}}
+                    {{__('Nuevo Anuncio')}} <i class="fas fa-plus me-3"></i>
                 </x-nav-item>
                 @guest
                     @if (Route::has('login'))
@@ -63,16 +63,11 @@
                 @endguest
                 
             </ul>
-            <!--Div navebar-->
-            <div class="d-flex navbar-nav ms-auto">
-                <!-- Icon -->
-                <a class="text-reset me-3" href="#">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-
+            <!--Div navbar-->
+            <div class="d-flex align-items-center navbar-nav">
                 @if (Auth::user()->is_revisor)
                 <!-- Notifications -->
-                <a class="text-reset me-3 hidden-arrow" 
+                <a class="text-reset supervisor me-3 hidden-arrow" 
                     href="{{ route('revisor.home') }}" 
                     id="navbarDropdownMenuLink"
                     role="button" aria-expanded="false">
@@ -86,7 +81,7 @@
                 @endif
 
                 <!-- Avatar -->
-                <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                <a class="dropdown-toggle me-3 d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
                     role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                     <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle" height="25" alt=""
                         loading="lazy" />
@@ -103,6 +98,10 @@
                         </a>
                     </li>
                 </ul>
+                 <!-- Icon -->
+                 <a class="text-reset me-3" href="#">
+                    <i class="fas fa-cart-plus"></i>
+                </a>
                 <ul class="navbar-nav ms-auto">
                 <x-nav-item lang="es" />
                 <x-nav-item lang="it" />
