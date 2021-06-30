@@ -64,6 +64,7 @@
                 
             </ul>
             <!--Div navbar-->
+            
             <div class="d-flex align-items-center navbar-nav">
                 @if (Auth::user()->is_revisor)
                 <!-- Notifications -->
@@ -98,6 +99,8 @@
                         </a>
                     </li>
                 </ul>
+
+                
                  <!-- Icon -->
                  <a class="text-reset me-3" href="#">
                     <i class="fas fa-cart-plus"></i>
