@@ -3,8 +3,9 @@
 	//$imgUrl = $ad->firstImg() ? Storage::url($ad->firstImg()) : "https://designshack.net/wp-content/uploads/placeholder-image.png";
 	$numberOfImages = $ad->images->count();
 	$imgUrl = $ad->firstImg();
+	$class = $attributes->merge(['class' => 'card'])['class'];
 @endphp
-<div {{ $attributes->merge(["class" =>"card"]) }}>
+{{-- <div {{ $attributes->merge(["class" =>"card"]) }}>
 	<div class="bg-image hover-overlay ripple " data-mdb-ripple-color="light">
 		<img src="{{$imgUrl}}" class="img-fluid" />
 		<a href="{{route('announcements.show', $ad)}}">
@@ -28,4 +29,75 @@
 			@endif
 		</div>
 	</div>
+</div> --}}
+
+<div class="{{$class}}">
+	<a class="img-card" href="{{route('announcements.show', $ad)}}">
+		<img src="{{$imgUrl}}">
+	</a>
+	<div class="card-content">
+		<h4 class="card-title">
+			<a href="{{route('announcements.show', $ad)}}">
+				{{$ad->title}}
+			</a>
+		</h4>
+		<p class="">
+				{{$ad->body}}
+		</p>
+	</div>
+	<div class="card-read-more">
+		<a href="{{route('category.announcements', $ad->category->id)}}" class="btn btn-link btn-block">
+				{{$ad->category->name}}
+		</a>
+		@if($edit && $ad->user->id == Auth::id())
+			<a href="{{route('announcements.edit', $ad)}}"><i class="fas fa-solid fa-pen"></i></a>
+		@endif
+	</div>
 </div>
+
+@once
+@push('css')
+<style>
+.img-card {
+	width: 100%;
+	height: 200px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	display: block;
+	overflow: hidden;
+}
+
+.img-card > img {
+	width: 100%;
+}
+
+.card-content {
+	padding: 15px;
+	text-align: left;
+}
+
+.card-title {
+    margin-top: 0px;
+    font-weight: 700;
+    font-size: 1.65em;
+}
+
+.card-read-more {
+  border-top: 1px solid #D4D4D4;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.card-read-more a {
+    text-decoration: none !important;
+    padding: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.card-title a {
+    color: #000;
+    text-decoration: none !important;
+}
+</style>
+@endpush
+@endonce

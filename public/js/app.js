@@ -3118,6 +3118,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "$$": () => (/* binding */ $$),
 /* harmony export */   "$on": () => (/* binding */ $on)
 /* harmony export */ });
+/*
+	ATENCION! No utilizamos jQuery porque no manipulamos demasiado el DOM y pq está obsoleto
+	En vez de jQuery tienes 3 funciones $, $$, $on para que ahorres escribir
+*/
 var $ = function $(el) {
   return document.querySelector(el);
 };
