@@ -15,7 +15,7 @@ class AnnouncementImage extends Model
     return $this->belongsTo(Announcement::class);
   }
 
-  static public function getUrlByFilePath($filePath, $w = null, $h = null){
+  static public function getUrlByFilePath($filePath, $w = null, $h = null) {
 
     if(!$w && !$h)
       return Storage::url($filePath);
@@ -29,8 +29,8 @@ class AnnouncementImage extends Model
     
   }
 
-  public function getUrl($w,$h){
-
+  public function getUrl($w, $h) {
+    
     return AnnouncementImage::getUrlByFilePath($this->file, $w, $h);
   }
 }

@@ -51,7 +51,7 @@ class AnnounceController extends Controller
     foreach($images as $i) // Aqui le llamamos $i en vez de $image, pq es mas corto...
     {
       $amounceImg = new AnnouncementImage;
-      
+
       $fileName = basename($i);
       $newFilePath = "public/announcements/{$announce->id}/{$fileName}";
       Storage::move($i, $newFilePath);
@@ -103,7 +103,7 @@ class AnnounceController extends Controller
     foreach($images as $i) {
       $data[] = [
         "id" => $i,
-        "src" => Storage::url($i), //AnnouncementImage::getUrlByFilePath($i, 120, 120),
+        "src" => AnnouncementImage::getUrlByFilePath($i, 120, 120),
         "size" => Storage::size($i),
         "name" => basename($i)
       ];

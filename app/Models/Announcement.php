@@ -27,7 +27,9 @@ class Announcement extends Model
     }
 
     public function firstImg() {
-        return $this->images->first()["file"] ?? '';
+        if ($this->images->count())
+            return $this->images->first()->getUrl(300, 150);
+        return "/img/img-placeholder.png";
     }
 
     static public function ToBeRevisionedCount(){
