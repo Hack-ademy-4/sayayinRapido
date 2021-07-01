@@ -8,7 +8,7 @@
         <div class="col-12 col-md-6">
             <div id="carrusell-detail" class="carousel cards-detalles carousel-light slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="0" class=""
+                    <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
@@ -17,7 +17,7 @@
                 </div>
                 @foreach($announcement->images as $image)
                 <div class="carousel-inner h-100">
-                    <div class="carousel-item @if($loop->first)active @endif" data-bs-interval="2000">
+                    <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="2000">
                         <img src="{{$image->getUrl(300,150)}}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>{{$announcement->user->name}}</h5>

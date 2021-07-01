@@ -6,15 +6,17 @@ use Session;
 use App\Models\User;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
-use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Models\Announcement;
+
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
-
 use Illuminate\Support\Facades\Storage;
+
+use App\Jobs\GoogleVisionSafeLabelImage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Http\Requests\AnnouncementRequest;
 
 class AnnounceController extends Controller
@@ -63,6 +65,7 @@ class AnnounceController extends Controller
       $amounceImg->announcement_id = $announce->id;
       $amounceImg->save();
       dispatch(new GoogleVisionSafeSearchImage($amounceImg->id));
+      dispatch(new GoogleVisionSafeLabelImage($amounceImg->id));
     }
     File::deleteDirectory(storage_path("/app/public/temp/{$user_token}"));
 

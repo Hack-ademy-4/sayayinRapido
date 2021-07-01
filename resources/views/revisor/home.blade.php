@@ -41,14 +41,39 @@
                   </div>
                   <hr>
                   <div class="row">
-                      <div class="col-md-3">
+                      <div class="col-md-2">
                           <h3>Imagenes</h3>
                       </div>
-                      @foreach($announcement->images as $image)
-                      <div class="col-md-9">
-                          <img src="{{$image->getUrl(300,150)}}" alt="" class="img-fluid">
+                      <div class="col-md-10">
+                        @foreach($announcement->images as $image)
+                        <div class="row mb-2">
+                            <div class="col-md-4">
+                                <img src="{{$image->getUrl(300,150)}}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-md-8">
+                                Adult : {{$image->adult}}<br>
+                                spoof : {{$image->spoof}}<br>
+                                medical : {{$image->medical}}<br>
+                                violence : {{$image->violence}}<br>
+                                racy : {{$image->racy}}<br>
+                                
+                                <b>Labels</b>
+                                <ul>
+                                    @if($image->labels)
+                                        @foreach($image->labels as $label)
+                                        <li>{{$label}}</li>
+                                        @endforeach
+                                    @endif
+                                </ul>
+
+                                <!-- {{$image->id}}<br>
+                                {{$image->file}}<br>
+                                {{Storage::url($image->file)}}<br> -->
+
+                            </div>
+                        </div>
+                        @endforeach
                       </div>
-                      @endforeach
                   </div>
                   <hr>
               </div>
