@@ -6,6 +6,7 @@ use Session;
 use App\Models\User;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
@@ -61,6 +62,7 @@ class AnnounceController extends Controller
       $amounceImg->file = $newFilePath;
       $amounceImg->announcement_id = $announce->id;
       $amounceImg->save();
+      dispatch(new GoogleVisionSafeSearchImage($amounceImg->id));
     }
     File::deleteDirectory(storage_path("/app/public/temp/{$user_token}"));
 
