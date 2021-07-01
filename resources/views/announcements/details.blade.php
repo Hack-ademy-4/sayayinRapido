@@ -8,7 +8,7 @@
         <div class="col-12 col-md-6">
             <div id="carrusell-detail" class="carousel cards-detalles carousel-light slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="0" class=""
+                    <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
@@ -41,9 +41,8 @@
         <!--parte de detalles -->
         <div class="col-12 col-md-4 titulo2 card-detalles ">
             <h2 class="text-uppercase my-4">{{$announcement->title}}</h2>
-            <div class="ratings"> <span class="product-rating">4.6</span><span>/5</span>
-                <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                <div class="rating-text"> <span>46 ratings & 15 reviews</span> </div>
+            <div class="ratings"> <span class="product-rating">4.6</span><span>/5&nbsp</span> <span class="stars"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span>
+                <div class="rating-text my-3"> <span>46 ratings & 15 reviews</span> </div>
             </div>
             <p class="my-3">Categoria: <a href="#">{{$announcement->category->name}}</a></p>
             <p>Precio: {{$announcement->price}} €</p>
@@ -54,9 +53,9 @@
                 <button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>
                     &nbsp{{__("Añadir a la cesta")}}</button>
             </div>
-            <div class="my-5">
+            <div class="my-5 text-center">
                 <!--<a href="#" class="btn btn-primary">{{__("Añadir a la cesta")}}</a>-->
-                <a href="#" class="btn btn-light btn-md mr-1 mb-2">{{__("Contactar con el vendedor")}}</a>
+                <a href="#" class="btn btn-light btn-md mr-1 mb-2">{{__("Contactar con el vendedor")}}&nbsp&nbsp&nbsp<i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
