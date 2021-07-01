@@ -15,17 +15,17 @@
                     <button type="button" data-bs-target="#carrusell-detail" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
-                @foreach($announcement->images as $image)
+                
                 <div class="carousel-inner h-100">
+                @foreach($announcement->images as $image)
                     <div class="carousel-item @if($loop->first) active @endif" data-bs-interval="2000">
                         <img src="{{$image->getUrl(300,150)}}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>{{$announcement->user->name}}</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
                         </div>
                     </div>
-                </div>
                 @endforeach
+                </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carrusell-detail"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
