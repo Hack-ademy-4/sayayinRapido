@@ -27,14 +27,14 @@
     <div class="col-12">
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center gx-0">
-          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-car fa-2x icono"></i></a></div>
-          <div class="col-1"> <a href="#" target="_blank"><i class="fab fa-gratipay fa-2x icono"></i></a></div>
-          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-book-open fa-2x icono"></i></a></div>
-          <div class="col-1"> <a href="#" target="_blank"><i class="fas fas fa-gamepad fa-2x icono"></i></a></div>
-          <div class="col-1"> <a href="#" target="_blank"><i class="fas fas fa-running fa-2x icono"></i></a></div>
-          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-home fa-2x icono"></i></a></div>
-          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-mobile-alt fa-2x icono"></i></a></div>
-          <div class="col-1"> <a href="#" target="_blank"><i class="fas fa-couch fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="{{route('category.announcements',['id'=>1])}}"><i class="fas fa-car fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="{{route('category.announcements',['id'=>2])}}"><i class="fab fa-gratipay fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="{{route('category.announcements',['id'=>3])}}"><i class="fas fa-book-open fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="{{route('category.announcements',['id'=>4])}}"><i class="fas fas fa-gamepad fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="{{route('category.announcements',['id'=>5])}}"><i class="fas fas fa-running fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="{{route('category.announcements',['id'=>6])}}"><i class="fas fa-home fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="{{route('category.announcements',['id'=>7])}}"><i class="fas fa-mobile-alt fa-2x icono"></i></a></div>
+          <div class="col-1"> <a href="{{route('category.announcements',['id'=>8])}}"><i class="fas fa-couch fa-2x icono"></i></a></div>
         </div>
       </div>
     </div>

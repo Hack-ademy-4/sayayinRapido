@@ -15,6 +15,7 @@ class Announcement extends Model
     use Searchable;
 
     protected $fillable = ["title", "body", "category_id", "price","is_accepted"];
+    protected $with = ['category', 'images'];
 
     public function toSearchableArray() {
         $array = [
@@ -34,6 +35,7 @@ class Announcement extends Model
 
     public function category(){
         return $this->belongsTo(Category::class);
+        //return $this->with("category")->get();
     }
 
     public function images() {
