@@ -13,6 +13,7 @@
 	"Descripción": "Descrizione",
 	"Categoria": "Categoria",
 	"Publicar": "Publicare",
+	"Imagenes": "Immagini",
 
 	"__comment3": "COMPONENTS/CARD-AD",
 	"Ver mas": "Vedi altro",
@@ -36,5 +37,14 @@
 	"Auto": "Auto",
 	"Ver todo": "Vedi tutto",
 	"Nombre Completo": "Nome e cognome",
-	"Mis anuncios": "I miei annunci"
+	"Mis anuncios": "I miei annunci",
+
+	"__CAEGORIAS": "CATEGORIAS",
+	"Hogar": "Casa",
+	"Libros": "Libri",
+	"Juegos": "Giochi",
+	"Deporte": "Sport",
+	"Inmuebles": "Proprietà",
+	"Informática": "Informatica",
+	"Muebles": "Mobilia"
 }

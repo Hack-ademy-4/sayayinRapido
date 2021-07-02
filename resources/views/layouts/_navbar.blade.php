@@ -11,24 +11,23 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <x-nav-item class="dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    {{__('Categorias')}}
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    @foreach($categories as $category)
-                    <li>
-                    <a class="dropdown-item text-decoration-none text-reset"
-                        href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">{{$category->name}}</a>
-                    </li>
-                    {{--
-                    <li>
-                    <hr class="dropdown-divider">
-                    </li>
-                    --}}
-                    @endforeach
-                </ul>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{__('Categorias')}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach($categories as $category)
+                        <li>
+                            <a class="dropdown-item text-decoration-none text-reset" href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">{{__($category->name)}}</a>
+                        </li>
+                        {{--
+                        <li>
+                        <hr class="dropdown-divider">
+                        </li>
+                        --}}
+                        @endforeach
+                    </ul>
                 </x-nav-item>
                 {{--
                 Nuevo componente x-nav-item que mete dentro un <li> con su <a> con href al parametro route, si lo tiene.
@@ -41,8 +40,8 @@
                 withLogout= bool - Añade el formulario para desconectar.
                 --}}
                 <x-nav-item route="announcements.create">
-                {{__('Nuevo Anuncio')}}
-                <i class="fas fa-plus me-3"></i>
+                    {{__('Nuevo Anuncio')}}
+                    <i class="fas fa-plus me-3"></i>
                 </x-nav-item>
                 @guest
                 @if (Route::has('login'))
@@ -74,29 +73,29 @@
                 <!-- Avatar -->
                 @auth
                 <x-nav-item class="dropdown" withLogout>
-                <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-                    role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                    <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle" height="25" alt=""
-                    loading="lazy" />
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                    <li>
-                    <a class="dropdown-item" href="{{ route('user.home') }}">
-                        {{Auth::user()->name}}
+                    <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle" height="25" alt=""
+                        loading="lazy" />
                     </a>
-                    </li>
-                    <li>
-                    <a class="dropdown-item logoutBtn" href="#">
-                        {{__('ui.logout')}}
-                    </a>
-                    </li>
-                </ul>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('user.home') }}">
+                                {{Auth::user()->name}}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item logoutBtn" href="#">
+                                {{__('ui.logout')}}
+                            </a>
+                        </li>
+                    </ul>
                 </x-nav-item>
                 <!-- Icon -->
                 <x-nav-item>
-                <a class="nav-link text-reset" href="#">
-                    <i class="fas fa-cart-plus"></i>
-                </a>
+                    <a class="nav-link text-reset" href="#">
+                        <i class="fas fa-cart-plus"></i>
+                    </a>
                 </x-nav-item>
                 @endauth
                 <x-nav-item lang="es" />

@@ -13,6 +13,7 @@
 	"Descripción": "Descrition",
 	"Categoria": "Category",
 	"Publicar": "Publish",
+	"Imagenes": "Images",
 
 	"__comment3": "COMPONENTS/CARD-AD",
 	"Ver mas": "More",
@@ -36,5 +37,14 @@
 	"Auto": "Car",
 	"Ver todo": "See everything",
 	"Nombre Completo": "Full Name",
-	"Mis anuncios": "My ads"
+	"Mis anuncios": "My ads",
+
+	"__CAEGORIAS": "CATEGORIAS",
+	"Hogar": "Home",
+	"Libros": "Books",
+	"Juegos": "Games",
+	"Deporte": "Sport",
+	"Inmuebles": "Estate",
+	"Informática": "Computing",
+	"Muebles": "Furniture"
 }

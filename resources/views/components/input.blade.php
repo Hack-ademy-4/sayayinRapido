@@ -14,7 +14,7 @@
 	<select {{ $attributes->merge(["class" =>"form-select"]) }} id="{{$id}}" name="{{$name}}" required>
 		<option @if (!$value) selected @endif value="">{{$placeholder}}</option>
 		@foreach($items ?? collect([]) as $item)
-		<option value="{{$item->id}}" @if ($value == $item->id) selected @endif>{{$item->name}}
+		<option value="{{$item->id}}" @if ($value == $item->id) selected @endif>{{__($item->name)}}
 		@endforeach
 	</select>
 	@else

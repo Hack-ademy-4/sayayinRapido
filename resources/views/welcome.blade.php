@@ -1,27 +1,14 @@
 @extends('layouts.app')
 @section('content')
-@if(session('access.denied.revisor.only'))
-  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
-  @endif
-
-  @if(session('msg'))
-  <div class="alert alert-success">{{session('msg')}}</div>
-  @endif
-  @if(session('access.denied.revisor.only'))
-  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
-  @endif
 <!--Aqui empezamos con principal-->
 <div class="container-fluid">
-  @if(session('access.denied.revisor.only'))
-  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
-  @endif
-
   @if(session('msg'))
-  <div class="alert alert-success">{{session('msg')}}</div>
+    <div class="alert alert-success">{{session('msg')}}</div>
   @endif
   @if(session('access.denied.revisor.only'))
-  <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+    <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
   @endif
+  
   <div class="row">
     <div class="input-group my-4">
       <div class="form-outline">

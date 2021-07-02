@@ -17,7 +17,7 @@
 			</div>
 			
 			<div class="mb-4">
-				<label for="announcementImages" class="form-label">Imagenes</label>
+				<label for="announcementImages" class="form-label">{{__('Imagenes')}}</label>
 				<div class="dropzone" id="drophere"></div>
 				@error('images')
 					<small class="alert alert-danger">{{ $message }}</small>
@@ -35,7 +35,7 @@
 	<script>
 		(function () {
 			// Inicializamos el dropZone y en vez de pasarle el parametro por meta, se lo pasamos como argumento
-			// window.newAds carga el public/js/****newAd.js y lo lanza, utilizando "chunks" de webpack para no crear un js demasiado grande.
+			// window.dropzone carga el public/js/****my-dropzone.js y lo lanza, utilizando "chunks" de webpack para no crear un js demasiado grande.
 			dropzone("{{csrf_token()}}");
 		})();
 	</script>
