@@ -20,3 +20,4 @@ leeme.md
 .editorconfig
 *.old
 google_credentials.json
+/storage/*.index
