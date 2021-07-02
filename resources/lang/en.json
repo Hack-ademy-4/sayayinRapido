@@ -4,7 +4,7 @@
 	"Nuevo Anuncio": "New Announcement",
 
 	"__coment2": "ANNOUNCEMENTS/CREATE",
-	"Añadir Nuevo Anúncio": "Add New Announcement",
+	"Añadir Nuevo Anuncio": "Add New Announcement",
 	"Titulo del articulo": "Article title",
 	"Describe aqui el articulo": "Describe the article here",
 	"Precio": "Price",
@@ -38,6 +38,7 @@
 	"Ver todo": "See everything",
 	"Nombre Completo": "Full Name",
 	"Mis anuncios": "My ads",
+	"Tu cuenta": "Your Account",
 
 	"__CAEGORIAS": "CATEGORIAS",
 	"Hogar": "Home",

@@ -2,9 +2,6 @@
 @section('content')
 <!--Aqui empezamos con principal-->
 <div class="container-fluid">
-  @if(session('msg'))
-    <div class="alert alert-success">{{session('msg')}}</div>
-  @endif
   @if(session('access.denied.revisor.only'))
     <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
   @endif
@@ -58,22 +55,22 @@
     <div class="carousel-item active">
       <img src="/img/kitchen.jpg" class="d-block w-100" alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h5>Time to renew your furniture</h5>
-        <p>In Pukka Market we help you to achieve your goals.</p>
+        <h5>Hogar</h5>
+        <p>Encuentra tus productos del hogar para tener el mejor confort.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="/img/car.jpg" class="d-block w-100" alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h5>Sell your car here</h5>
-        <p> Put your time in what is important and leave for us to sell your car.</p>
+        <h5>Automóvil</h5>
+        <p>Encuentra tu automóvil al mejor precio</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="/img/room.jpg" class="d-block w-100" alt="..." />
       <div class="carousel-caption d-none d-md-block">
-        <h5>Spring is here</h5>
-        <p> Find more in our gardening department.</p>
+        <h5>Mobiliario</h5>
+        <p>Encuentra el mejor mobiliario para tener un hogar a la altura de los mejores.</p>
       </div>
     </div>
     <!-- Controls -->
@@ -95,44 +92,6 @@
       <x-card-ad :ad=$announcement />
     </div>
     @endforeach
-  </div>
-</div>
-
-<!--Cards de chollos-->
-<div class="row cartas gx-0">
-  <h2 class="text-center titulo2 my-3">{{__('Los chollos que no te puedes perdes este verano')}}
-    <i class="fas fa-umbrella-beach"></i>
-  </h2>
-  <div class="col-md-6 col-lg-4 col-xl-3">
-    <div class="card my-5">
-      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGdhcmRlbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Jardín</h5>
-        <p class="card-text">Aproveche el solecito</p>
-        <a href="#!" class="btn btn-primary">{{__('Ver mas')}}</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 col-lg-4 col-xl-3">
-    <div class="card my-5">
-      <img src="https://images.unsplash.com/photo-1499720565725-bd574541a3ee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Kayak</h5>
-        <p class="card-text">Jugar en el agua siempre es divertido</p>
-        <a href="#!" class="btn btn-primary">{{__('Ver mas')}}</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 col-lg-4 col-xl-3">
-    <div class="card my-5">
-      <img src="https://cdn.pixabay.com/photo/2018/08/08/00/09/inliner-3591101__340.jpg"
-        class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Patines </h5>
-        <p class="card-text">Hora de sudar con patines</p>
-        <a href="#!" class="btn btn-primary">{{__('Ver mas')}}</a>
-      </div>
-    </div>
   </div>
 </div>
 @endsection
