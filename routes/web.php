@@ -18,7 +18,11 @@ use App\Http\Controllers\ProfileController;
 */
 
 //Ruta home
-Route::get('/',[PublicController::class,"index"])->name('home');
+Route::get('/',[PublicController::class, "index"])->name('home');
+
+//Buscar
+Route::get('/search', [PublicController::class, "search"])->name('search');
+
 //Anuncios relacionados con categorias
 Route::get('/category/{id}/announcements', [PublicController::class, "AnnouncementsByCategory"])->name('category.announcements');
 

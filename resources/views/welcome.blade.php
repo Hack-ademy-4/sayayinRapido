@@ -10,13 +10,13 @@
   @endif
   
   <div class="row">
-    <div class="input-group my-4">
+    <form class="input-group my-4" action="{{route('search')}}" method="GET">
       <div class="form-outline">
-        <input type="search" id="form1" class="form-control" />
+        <input type="search" id="form1" class="form-control" name="search" />
         <label class="form-label" for="form1">{{__('ui.search')}}</label>
       </div>
-      <button type="button botao" class="btn btn-primary"><i class="fas fa-search"></i></button>
-    </div>
+      <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+    </form>
     @if (session('secondTitle'))
     <h2 class="my-5 text-center title_under_navBar">{{__('ui.secondTitle', ['category' => session('secondTitle')])}}</h2>
     @else
