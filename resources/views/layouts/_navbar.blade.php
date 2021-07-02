@@ -106,3 +106,29 @@
         </div>
     </div>
 </nav>
+
+@push('styles')
+<style>
+.collapsing {
+		transition: none;
+}
+
+@media (max-width: 991.98px) {
+    #navbarResponsive.show > ul:first-child {
+        right: 150px;
+    }
+
+    #navbarResponsive.show > ul:last-child {
+        left: calc(100% - 148px);
+    }
+
+    #navbarResponsive.show > ul:last-child ul {
+        right: 34px;
+        position: fixed;
+        left: auto;
+        z-index: 999;
+        top: 168px;
+    }
+}
+</style>
+@endpush
