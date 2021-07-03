@@ -4,8 +4,9 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
-use App\Models\AnnouncementImage;
+use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
+use App\Models\AnnouncementImage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -15,6 +16,27 @@ class Announcement extends Model
     use Searchable;
 
     protected $fillable = ["title", "body", "category_id", "price","is_accepted"];
+    protected $with = ['category', 'images', 'user'];
+
+    /**
+    * Get the route key for the model.
+    *
+    * @return string
+    */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
+     * Get the value of the model's route key.
+     *
+     * @return mixed
+     */
+    /*public function getRouteKey()
+    {
+        return $this->slug;
+    }*/
 
     public function toSearchableArray() {
         $array = [
@@ -34,6 +56,7 @@ class Announcement extends Model
 
     public function category(){
         return $this->belongsTo(Category::class);
+        //return $this->with("category")->get();
     }
 
     public function images() {
@@ -48,6 +71,17 @@ class Announcement extends Model
 
     static public function ToBeRevisionedCount(){
 
-        return Announcement::where('is_accepted',null)->count();
+        return Announcement::where('is_accepted', null)->count();
+    }
+
+
+    static function getSlug($title) {
+
+        $slug = Str::of($title)->slug("-");
+        $c = Announcement::where("slug", "LIKE", "%{$slug}%")->count();
+
+        return $slug->append($c? "-{$c}" : "");
+
+        //return Str::of($title)->slug("-")->append($count > 1 ? "-" . $count : "");
     }
 }
