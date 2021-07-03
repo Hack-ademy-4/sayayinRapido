@@ -65,6 +65,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 Asegurate de tener habilitadas (descomentadas ) las siguientes extensiones en php.ini:
 - extension=pdo_sqlite
 - extension=sqlite3
+
+Asegurate de tener en php.ini configurado el certificado:
+curl.cainfo = path/to/your/cacert.pem
+
 ```bash
 git clone git@github.com:Hack-ademy-4/sayayinRapido.git
 composer update

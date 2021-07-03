@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg py-0 px-2 border-bottom navegacion" id="mainNav">
     <div class="container-fluid">
         <a class="navbar-brand js-scroll-trigger text-white rapidoLogo" href="{{route('home')}}"> <img
-                src="/img/logorapido5.png" class="nav-logo"></a>
+                src="/img/logocortado.png" class="nav-logo"></a>
         <button
             class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
             type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
