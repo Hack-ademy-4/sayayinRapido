@@ -26,7 +26,8 @@ class AnnounceController extends Controller
   
   public function index(){
 
-    $announcements = Auth::user()->Announcements()->paginate(10);
+    $announcements = Auth::user()->Announcements()->orderByDesc('created_at')->paginate(10);
+    //dd($announcements);
 
     return view("announcements.index",compact('announcements'));
   }
@@ -41,11 +42,12 @@ class AnnounceController extends Controller
   }
 
   public function store(AnnouncementRequest $request){
-    //dd($request);
     $data = $request->validated();
     $user_token = $request->input("user_token");
     
     $announce = Auth::user()->announcements()->create($data);
+    $announce->slug = Announcement::getSlug($request->input("title"));
+    $announce->save();
     
 
     // Guardamos imagenes
