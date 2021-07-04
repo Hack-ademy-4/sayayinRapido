@@ -63,20 +63,8 @@
     <div class="row">
         <div class="col-8 text-center">
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 </div>
 @endsection
-
-@push('css')
-<style>
-    .carousel-control-next-icon::after {
-        content: "";
-    }
-
-    .carousel-control-prev-icon::after {
-        content: "";
-    }
-</style>
-@endpush

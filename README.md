@@ -60,3 +60,20 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Instalacion y resolution de problemas
+Asegurate de tener habilitadas (descomentadas ) las siguientes extensiones en php.ini:
+- extension=pdo_sqlite
+- extension=sqlite3
+
+Asegurate de tener en php.ini configurado el certificado:
+curl.cainfo = path/to/your/cacert.pem
+
+```bash
+git clone git@github.com:Hack-ademy-4/sayayinRapido.git
+composer update
+cp .env.example .env
+php artisan key:generate
+php artisan serve
+php artisan migrate
+```
