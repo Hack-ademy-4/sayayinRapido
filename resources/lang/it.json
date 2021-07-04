@@ -45,8 +45,11 @@
 	"Nombre Completo": "Nome e cognome",
 	"Mis anuncios": "I miei annunci",
 	"Tu cuenta": "Il tuo Account",
+	"Resultados de la búsqueda" : "Resultati di ricerca",
+	"No hay resultados que coincidan con la búsqueda" : "Non ci sono risultati che corrispondono alla tua ricerca",
+	"Inicio" : "Inizio",
 
-	"__CAEGORIAS": "CATEGORIAS",
+	"__CATEGORIAS": "CATEGORIAS",
 	"Hogar": "Casa",
 	"Libros": "Libri",
 	"Juegos": "Giochi",

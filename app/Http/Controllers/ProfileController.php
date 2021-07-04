@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-	public function __construc()
+	public function __construct()
 	{
 		$this->middleware('auth.revisor');
 	}

@@ -45,8 +45,11 @@
 	"Nombre Completo": "Full Name",
 	"Mis anuncios": "My ads",
 	"Tu cuenta": "Your Account",
+	"Resultados de la búsqueda" : "Search results",
+	"No hay resultados que coincidan con la búsqueda" : "There ar no results that match your search",
+	"Inicio" : "Go to Home",
 
-	"__CAEGORIAS": "CATEGORIAS",
+	"__CATEGORIAS": "CATEGORIAS",
 	"Hogar": "Home",
 	"Libros": "Books",
 	"Juegos": "Games",

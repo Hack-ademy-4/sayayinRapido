@@ -38,6 +38,6 @@ class PublicController extends Controller
         $announcements = Announcement::search($q)
             ->where('is_accepted', true)
             ->get();
-        return view('welcome', compact('q', 'announcements'));
+        return view('search_results', compact('q', 'announcements'));
     }
 }
