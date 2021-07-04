@@ -145,13 +145,16 @@ box-shadow:0px 0px 5px black;
 		content: "";
 }
 
-/*carousel-subtitulo cornflowerblue*/
+/*carousel-subtitulo*/
 .carousel-titulo{
 	background-color: aliceblue;
 	color:#3c74c8 !important;
 	font-weight: bolder;
 	font-size:x-large;
 	opacity: 0.9;
+}
+.card_detalle{
+	padding:20px;
 }
 .form-control.is-invalid, .was-validated .form-control:invalid {
 	margin-bottom: unset; /*1rem;*/
