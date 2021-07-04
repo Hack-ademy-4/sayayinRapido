@@ -47,15 +47,16 @@
             <p class="my-3">Categoria: <a href="#">{{$announcement->category->name}}</a></p>
             <p>Precio: {{$announcement->price}} €</p>
             <p>Descripción: {{$announcement->body}}</p>
+            <p>Fecha de publicación: {{$announcement->created_at}}</p>
             <hr>
-            <div class="d-flex justify-content-between">
+            <!-- <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Comprar ya</button>
                 <button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>
                     &nbsp{{__("Añadir a la cesta")}}</button>
-            </div>
-            <div class="my-5 text-center">
+            </div> -->
+            <div class="d-flex justify-content-between my-5 text-center">
                 <!--<a href="#" class="btn btn-primary">{{__("Añadir a la cesta")}}</a>-->
-                <a href="#" class="btn btn-light btn-md mr-1 mb-2">{{__("Contactar con el vendedor")}}&nbsp&nbsp&nbsp<i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="btn btn-primary btn-md mr-1 mb-2">{{__("Contactar con el vendedor")}}&nbsp&nbsp&nbsp<i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
