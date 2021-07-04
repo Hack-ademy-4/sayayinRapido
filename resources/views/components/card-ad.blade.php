@@ -32,9 +32,29 @@
 </div> --}}
 
 <div class="{{$class}}">
-	<a class="img-card" href="{{route('announcements.show', $ad)}}">
-		<img src="{{$imgUrl}}">
-	</a>
+	@if ($numberOfImages <= 1)
+		<a class="img-card" href="{{route('announcements.show', $ad)}}">
+			<img src="{{$imgUrl}}">
+		</a>
+	@else
+	<div id="card-ad-caruosel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			@foreach ($ad->images as $image)
+				<div class="carousel-item active">
+					<img src="{{$image->getUrl(300, 150)}}" class="d-block w-100" alt="{{$ad->title}}">
+				</div>
+			@endforeach
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#card-ad-caruosel" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#card-ad-caruosel" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	@endif
 	<div class="card-content">
 		<h4 class="card-title">
 			<a href="{{route('announcements.show', $ad)}}">

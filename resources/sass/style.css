@@ -134,3 +134,13 @@ box-shadow:0px 0px 5px black;
 		margin-top: -27px;
 	}
 }
+
+/* ------------------ Caruosell se ve con dos flechas ???? -------------------------------------- */
+
+.carousel-control-next-icon::after {
+		content: "";
+}
+
+.carousel-control-prev-icon::after {
+		content: "";
+}
