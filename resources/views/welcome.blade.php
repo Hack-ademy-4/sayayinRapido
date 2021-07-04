@@ -5,6 +5,9 @@
   @if(session('access.denied.revisor.only'))
   <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
   @endif
+  @if(session('msg'))
+  <div class="alert alert-success">{{session('msg')}}</div>
+  @endif
 
   <div class="row">
     <form class="input-group my-4" action="{{route('search')}}" method="GET">
@@ -25,7 +28,7 @@
     <!-- Para cambiar el texto está en /resouces/lang/{idioma}/ui.php -->
   </div>
   <!--iconos-->
-  <div class="row my-5 gx-0" style="display: flex;justify-content: space-evenly;">
+  <div class="row my-5 gx-0 d-flex justify-content-evenly">
     <div class="col-1"> <a href="{{route('category.announcements',['id'=>1])}}"><i
           class="fas fa-car fa-2x icono"></i></a></div>
     <div class="col-1"> <a href="{{route('category.announcements',['id'=>2])}}"><i
@@ -45,46 +48,48 @@
   </div>
 </div>
 <!-- Carousel wrapper -->
-<div id="carrusel-home" class="carousel slide carousel-fade my-5" data-mdb-ride="carousel">
-  <!-- Indicators -->
-  <div class="carousel-indicators">
-    <button type="button" data-mdb-target="#carrusel-home" data-mdb-slide-to="0" class="active" aria-current="true"
-      aria-label="Slide 1"></button>
-    <button type="button" data-mdb-target="#carrusel-home" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-mdb-target="#carrusel-home" data-mdb-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <!-- Carrosel fotos -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/img/kitchen.jpg" class="d-block w-75" alt="..." />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Hogar</h5>
-        <p>Encuentra tus productos del hogar para tener el mejor confort.</p>
-      </div>
+<div class="container">
+  <div id="carrusel-home" class="carousel slide carousel-fade my-5" data-mdb-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-mdb-target="#carrusel-home" data-mdb-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-mdb-target="#carrusel-home" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-mdb-target="#carrusel-home" data-mdb-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-item">
-      <img src="/img/car.jpg" class="d-block w-75" alt="..." />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Automóvil</h5>
-        <p>Encuentra tu automóvil al mejor precio</p>
+    <!-- Carrosel fotos -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/img/kitchen.jpg" class="d-block w-100" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Hogar</h5>
+          <p>Encuentra tus productos del hogar para tener el mejor confort.</p>
+        </div>
       </div>
-    </div>
-    <div class="carousel-item">
-      <img src="/img/room.jpg" class="d-block w-75" alt="..." />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Mobiliario</h5>
-        <p>Encuentra el mejor mobiliario para tener un hogar a la altura de los mejores.</p>
+      <div class="carousel-item">
+        <img src="/img/car.jpg" class="d-block w-100" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Automóvil</h5>
+          <p>Encuentra tu automóvil al mejor precio</p>
+        </div>
       </div>
+      <div class="carousel-item">
+        <img src="/img/room.jpg" class="d-block w-100" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Mobiliario</h5>
+          <p>Encuentra el mejor mobiliario para tener un hogar a la altura de los mejores.</p>
+        </div>
+      </div>
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-mdb-target="#carrusel-home" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-mdb-target="#carrusel-home" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-mdb-target="#carrusel-home" data-mdb-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-mdb-target="#carrusel-home" data-mdb-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 </div>
 <h2 class="my-5 text-center title_under_navBar">Añadidos recentemente</h2>
