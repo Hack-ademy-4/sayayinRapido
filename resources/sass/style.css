@@ -144,3 +144,12 @@ box-shadow:0px 0px 5px black;
 .carousel-control-prev-icon::after {
 		content: "";
 }
+
+/*carousel-subtitulo cornflowerblue*/
+.carousel-titulo{
+	background-color: aliceblue;
+	color:#3c74c8 !important;
+	font-weight: bolder;
+	font-size:x-large;
+	opacity: 0.9;
+}

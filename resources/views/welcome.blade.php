@@ -61,22 +61,22 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="/img/kitchen.jpg" class="d-block w-100" />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Hogar</h5>
+        <div class="carousel-caption carousel-titulo d-none d-md-block">
+          <h4>Hogar</h4>
           <p>Encuentra tus productos del hogar para tener el mejor confort.</p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="/img/car.jpg" class="d-block w-100" />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Automóvil</h5>
+        <div class="carousel-caption carousel-titulo d-none d-md-block">
+          <h4>Automóvil</h4>
           <p>Encuentra tu automóvil al mejor precio</p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="/img/room.jpg" class="d-block w-100" />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Mobiliario</h5>
+        <div class="carousel-caption carousel-titulo d-none d-md-block">
+          <h4>Mobiliario</h4>
           <p>Encuentra el mejor mobiliario para tener un hogar a la altura de los mejores.</p>
         </div>
       </div>
