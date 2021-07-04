@@ -56,14 +56,19 @@
 	</div>
 	@endif
 	<div class="card-content">
-		<h4 class="card-title">
-			<a href="{{route('announcements.show', $ad)}}">
-				{{$ad->title}}
-			</a>
-		</h4>
-		<p class="">
-				{{$ad->body}}
-		</p>
+		<h4 class="card-title text-center">{{$ad->title}}</h4>
+		<div class="card-body">
+			<p class="px-2"><span>{{$ad->body}}</span></p>
+			<h3 class="text-dark"><small>Precio: {{$ad->price}}€</small></h3>
+		</div>
+		<div class="text-center">
+			<a class="btn btn-primary btn-md mr-1 mb-2" href="{{route('announcements.show', $ad)}}">Ver más</a>
+			<div class="card-footer">
+				<p class=""><small>Creado por: {{$ad->user->name}}</small></p>
+				<small>{{$ad->created_at->format('d/m/Y')}}</small>
+			</div>
+			
+		</div>
 	</div>
 	<div class="card-read-more">
 		<a href="{{route('category.announcements', $ad->category->id)}}" class="btn btn-link btn-block">

@@ -47,7 +47,7 @@
             <p class="my-3">Categoria: <a href="#">{{$announcement->category->name}}</a></p>
             <p>Precio: {{$announcement->price}} €</p>
             <p>Descripción: {{$announcement->body}}</p>
-            <p>Fecha de publicación: {{$announcement->created_at}}</p>
+            <p>Fecha de publicación: {{$announcement->created_at->format('d/m/Y')}}</p>
             <hr>
             <!-- <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Comprar ya</button>

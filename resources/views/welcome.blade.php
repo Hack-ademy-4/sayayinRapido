@@ -11,7 +11,7 @@
 
   <div class="row">
     <form class="input-group my-4" action="{{route('search')}}" method="GET">
-    <h4 class="title_under_navBar me-3">¿Que estás buscando?</h4> &nbsp&nbsp&nbsp
+    <h4 class="title_under_navBar me-3">{{__('¿Que estás buscando?')}}</h4> &nbsp&nbsp&nbsp
       <div class="form-outline">
         <input type="search" id="form1" class="form-control" name="search" />
         <label class="form-label" for="form1">{{__('ui.search')}}</label>
@@ -62,22 +62,22 @@
       <div class="carousel-item active">
         <img src="/img/kitchen.jpg" class="d-block w-100" />
         <div class="carousel-caption carousel-titulo d-none d-md-block">
-          <h4>Hogar</h4>
-          <p>Encuentra tus productos del hogar para tener el mejor confort.</p>
+          <h4>{{__('Hogar')}}</h4>
+          <p>{{__('Encuentra tus productos del hogar para tener el mejor confort')}}</p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="/img/car.jpg" class="d-block w-100" />
         <div class="carousel-caption carousel-titulo d-none d-md-block">
-          <h4>Automóvil</h4>
-          <p>Encuentra tu automóvil al mejor precio</p>
+          <h4>{{__('Automóvil')}}</h4>
+          <p>{{__('Encuentra tu automóvil al mejor precio')}}</p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="/img/room.jpg" class="d-block w-100" />
         <div class="carousel-caption carousel-titulo d-none d-md-block">
-          <h4>Muebles</h4>
-          <p>Encuentre lo perfecto mueble a la altura de los mejores.</p>
+          <h4>{{__('Muebles')}}</h4>
+          <p>{{__('Encuentre el mueble perfecto a la altura de los mejores')}}</p>
         </div>
       </div>
       <!-- Controls -->
@@ -92,7 +92,7 @@
     </div>
   </div>
 </div>
-<h2 class="my-5 text-center title_under_navBar">Añadidos recentemente</h2>
+<h2 class="my-5 text-center title_under_navBar">{{__('Añadidos recientemente')}}</h2>
 <div class="container-fluid">
   <div class="row">
     @foreach($announcements as $announcement)

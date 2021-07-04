@@ -4,7 +4,7 @@
 @if($announcement)
 <div class='container'>
   <div class='row my-5'>
-  <h2 class="text-center title_under_navBar my-4">Revise los productos abajo</h2>
+  <h2 class="text-center title_under_navBar my-4">{{__('Revise los productos abajo')}}</h2>
       <div class='col-12'>
           <div class="card">
               <div class="card-header">
