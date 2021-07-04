@@ -5,7 +5,7 @@
 	<h2 class="text-center title_under_navBar my-4">{{__('Detalles del producto')}}</h2>
 	<div class="row formulario">
 		<!--Aqui empieza el detalle-->
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-md-6 card_detalle">
 			@if ($announcement->images->count() <= 1)
 			<img src="{{$announcement->firstImg()}}" style="width: 100%;">
 			@else
@@ -48,15 +48,18 @@
 			<p>Precio: {{$announcement->price}} €</p>
 			<p>Descripción: {{$announcement->body}}</p>
 			<hr>
-			<div class="d-flex justify-content-between">
+			<div class="d-flex text-center justify-content-center">
+				<a href="#" class="btn btn-primary btn-md mr-1 mb-2">{{__("Contactar con el vendedor")}}&nbsp&nbsp&nbsp<i class="fab fa-whatsapp"></i></a>
+			</div>
+			<!-- <div class="d-flex justify-content-between">
 				<button type="button" class="btn btn-primary btn-md mr-1 mb-2">Comprar ya</button>
 				<button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>
 					&nbsp{{__("Añadir a la cesta")}}</button>
-			</div>
-			<div class="my-5 text-center">
-				<!--<a href="#" class="btn btn-primary">{{__("Añadir a la cesta")}}</a>-->
+			</div> -->
+			<!-- <div class="my-5 text-center">
+				<a href="#" class="btn btn-primary">{{__("Añadir a la cesta")}}</a>
 				<a href="#" class="btn btn-light btn-md mr-1 mb-2">{{__("Contactar con el vendedor")}}&nbsp&nbsp&nbsp<i class="fab fa-whatsapp"></i></a>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="row">

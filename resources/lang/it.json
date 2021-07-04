@@ -24,9 +24,15 @@
 	"Aceptar": "Accettare",
 	"Rechazar": "Rifiutare",
 	"No hay anuncios para revisar":"Non ci sono annunci da recensirew",
+	"Revise los productos abajo" : "Controlla i prodotti qui sotto",
 
 	"__comment5": "PAGINA PRINCIPAL WELCOME",
 	"Los chollos que no te puedes perdes este verano": "Le occasioni da non perdere quest'estate",
+	"Añadidos recientemente": "Aggiunto recentemente",
+	"¿Que estás buscando?": "¿Che cosa sta cercando?",
+	"Encuentra tus productos del hogar para tener el mejor confort": "Trova i tuoi prodotti per la casa per avere il miglior comfort",
+	"Encuentra tu automóvil al mejor precio": "Trova la tua auto al miglior prezzo",
+	"Encuentre el mueble perfecto a la altura de los mejores": "Trova l'arredamento perfetto all'altezza dei migliori",
 
 		"__comment_others": "OTRAS TRADUCCIONES",
 	"aquí": "qui",
@@ -39,8 +45,11 @@
 	"Nombre Completo": "Nome e cognome",
 	"Mis anuncios": "I miei annunci",
 	"Tu cuenta": "Il tuo Account",
+	"Resultados de la búsqueda" : "Resultati di ricerca",
+	"No hay resultados que coincidan con la búsqueda" : "Non ci sono risultati che corrispondono alla tua ricerca",
+	"Inicio" : "Inizio",
 
-	"__CAEGORIAS": "CATEGORIAS",
+	"__CATEGORIAS": "CATEGORIAS",
 	"Hogar": "Casa",
 	"Libros": "Libri",
 	"Juegos": "Giochi",

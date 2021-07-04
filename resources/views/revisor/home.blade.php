@@ -4,7 +4,7 @@
 @if($announcement)
 <div class='container'>
   <div class='row my-5'>
-  <h2 class="text-center title_under_navBar my-4">Revise los productos abajo</h2>
+  <h2 class="text-center title_under_navBar my-4">{{__('Revise los productos abajo')}}</h2>
       <div class='col-12'>
           <div class="card">
               <div class="card-header">
@@ -97,6 +97,6 @@
 </div>
 @else
     <h3 class="text-center title_under_navBar my-4"> {{__('No hay anuncios para revisar')}} </h3>
-    <p class="text-center my-5"><a href="{{route('home')}}">Inicio</a></p>
+    <p class="text-center my-5"><a href="{{route('home')}}">{{__('Inicio')}}</a></p>
 @endif
 @endsection

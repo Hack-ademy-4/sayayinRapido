@@ -57,19 +57,21 @@
 	</div>
 	@endif
 	<div class="card-content">
-		<h4 class="card-title">
-			<a href="{{route('announcements.show', $ad)}}">
-				{{$ad->title}}
-			</a>
-		</h4>
-		<p class="">
-				{{$ad->body}}
-		</p>
-		@if ($showDetail)
-		<p>{{$ad->price}} €</p>
-		<p> {{$ad->category->name}}</p>
-		<i>{{$ad->created_at->format('d/m/Y')}} - {{$ad->user->name}}</i>
-		@endif
+		<h4 class="card-title text-center">{{$ad->title}}</h4>
+		<div class="card-body">
+			<p class="px-2"><span>{{$ad->body}}</span></p>
+			<h3 class="text-dark"><small>Precio: {{$ad->price}}€</small></h3>
+		</div>
+		<div class="text-center">
+			<a class="btn btn-primary btn-md mr-1 mb-2 text-center" href="{{route('announcements.show', $ad)}}">Ver más</a>
+		</div>
+		<div class="card-footer">
+			<p class=""><small>Creado por: {{$ad->user->name}}</small></p>
+			<hr>
+			<small>Subido el: {{$ad->created_at->format('d/m/Y')}}</small>
+		</div>
+			
+		
 	</div>
 	<div class="card-read-more">
 		@unless (Route::is("category.announcements"))
