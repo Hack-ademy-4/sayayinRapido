@@ -10,7 +10,7 @@
   <div class="row">
   @foreach($announcements as $announcement)
     <div class="col-md-6 col-lg-4 col-xl-3 my-5">
-    <x-card-ad :ad=$announcement edit/>
+    <x-card-ad :ad=$announcement edit showDetail/>
     </div>
   @endforeach
   </div>

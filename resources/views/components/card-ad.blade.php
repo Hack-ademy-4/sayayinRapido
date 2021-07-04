@@ -4,6 +4,7 @@
 	$numberOfImages = $ad->images->count();
 	$imgUrl = $ad->firstImg();
 	$class = $attributes->merge(['class' => 'card'])['class'];
+	$showDetail = $showDetail ?? false;
 @endphp
 {{-- <div {{ $attributes->merge(["class" =>"card"]) }}>
 	<div class="bg-image hover-overlay ripple " data-mdb-ripple-color="light">
@@ -64,11 +65,18 @@
 		<p class="">
 				{{$ad->body}}
 		</p>
+		@if ($showDetail)
+		<p>{{$ad->price}} €</p>
+		<p> {{$ad->category->name}}</p>
+		<i>{{$ad->created_at->format('d/m/Y')}} - {{$ad->user->name}}</i>
+		@endif
 	</div>
 	<div class="card-read-more">
+		@unless (Route::is("category.announcements"))
 		<a href="{{route('category.announcements', $ad->category->id)}}" class="btn btn-link btn-block">
 				{{$ad->category->name}}
 		</a>
+		@endunless
 		@if($edit && $ad->user->id == Auth::id())
 			<a href="{{route('announcements.edit', $ad)}}"><i class="fas fa-solid fa-pen"></i></a>
 		@endif
