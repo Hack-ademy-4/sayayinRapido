@@ -11,7 +11,7 @@
 
   <div class="row">
     <form class="input-group my-4" action="{{route('search')}}" method="GET">
-    <h3 class="title_under_navBar me-3">Que estas buscando?</h3> &nbsp&nbsp&nbsp
+    <h4 class="title_under_navBar me-3">¿Que estás buscando?</h4> &nbsp&nbsp&nbsp
       <div class="form-outline">
         <input type="search" id="form1" class="form-control" name="search" />
         <label class="form-label" for="form1">{{__('ui.search')}}</label>
@@ -76,8 +76,8 @@
       <div class="carousel-item">
         <img src="/img/room.jpg" class="d-block w-100" />
         <div class="carousel-caption carousel-titulo d-none d-md-block">
-          <h4>Mobiliario</h4>
-          <p>Encuentra el mejor mobiliario para tener un hogar a la altura de los mejores.</p>
+          <h4>Muebles</h4>
+          <p>Encuentre lo perfecto mueble a la altura de los mejores.</p>
         </div>
       </div>
       <!-- Controls -->
