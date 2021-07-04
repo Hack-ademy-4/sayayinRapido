@@ -21,3 +21,4 @@ leeme.md
 *.old
 google_credentials.json
 /storage/*.index**
+google_credentials.json
