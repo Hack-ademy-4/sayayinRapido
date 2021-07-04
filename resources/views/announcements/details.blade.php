@@ -5,7 +5,7 @@
 	<h2 class="text-center title_under_navBar my-4">{{__('Detalles del producto')}}</h2>
 	<div class="row formulario">
 		<!--Aqui empieza el detalle-->
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-md-6 card_detalle">
 			@if ($announcement->images->count() <= 1)
 			<img src="{{$announcement->firstImg()}}" style="width: 100%;">
 			@else
