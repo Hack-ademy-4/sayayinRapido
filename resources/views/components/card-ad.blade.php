@@ -41,7 +41,7 @@
 	<div id="card-ad-caruosel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			@foreach ($ad->images as $image)
-				<div class="carousel-item active">
+				<div class="carousel-item @if ($loop->first)active @endif">
 					<img src="{{$image->getUrl(300, 150)}}" class="d-block w-100" alt="{{$ad->title}}">
 				</div>
 			@endforeach
