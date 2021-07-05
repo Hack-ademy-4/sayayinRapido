@@ -63,7 +63,7 @@
 			<h3 class="text-dark"><small>Precio: {{$ad->price}}€</small></h3>
 		</div>
 		<div class="text-center">
-			<a class="btn btn-primary btn-md mr-1 mb-2 text-center" href="{{route('announcements.show', $ad)}}">Ver más</a>
+			<a class="btn btn-primary btn-md mr-1 mb-2 text-center" href="{{route('announcements.show', $ad)}}">{{__('Ver más')}}</a>
 		</div>
 		<div class="card-footer">
 			<p class=""><small>Creado por: {{$ad->user->name}}</small></p>
