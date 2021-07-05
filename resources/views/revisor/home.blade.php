@@ -33,7 +33,7 @@
                   <hr>
                   <div class="row">
                       <div class="col-md-3">
-                          <h3>Descripción</h3>
+                          <h3>{{__('Descripción')}}</h3>
                       </div>
                       <div class="col-md-9">
                           {{$announcement->body}}
@@ -42,7 +42,7 @@
                   <hr>
                   <div class="row">
                       <div class="col-md-2">
-                          <h3>Imagenes</h3>
+                          <h3>{{__('Imagenes')}}</h3>
                       </div>
                       <div class="col-md-10">
                         @foreach($announcement->images as $image)
